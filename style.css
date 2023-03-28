@@ -1,11 +1,10 @@
 * {
     font-family: monospace;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
 }
 
 
+
+/* start of links style */
 a {
     text-decoration: none;
     color: inherit;
@@ -15,37 +14,43 @@ a:visited {
     color: inherit;
 }
 
+a:hover{
+    color:#00ADB5;
+}
+/* end of links style */
+
+body {
+    padding-top: 60px;
+
+}
+
 nav {
     display: flex;
-    box-sizing: border-box;
+    justify-content: space-between;
     color: #222831;
-    top: 0;
-    width: 100%;
-    left: 0;
-    border: none;
+    width: 100% ;
     position: fixed;
+    top: 0;
+    left: 0;
     margin-bottom: 20px;
     background-color: #EEEEEE;
 }
 
-body{
-    padding-top: 50px;
+nav .links{
+    flex-direction: row-reverse;
 }
 
 .logo {
-    object-fit: contain;
     align-self: center;
-    font-size: larger;
+    font-size: 22px;
     font-family: 'Courier New';
     padding: 10px;
-    float: left;
-    width: 10%;
+}
+.logo a:hover{
+    color:inherit;
 }
 
-.links {
-    width: 60%;
-    text-align: right;
-}
+
 
 .links li {
     display: inline-block;
@@ -66,9 +71,8 @@ body{
     display: inline-flex;
     float: left;
     align-self: center;
-    margin-right: 10px;
+    margin-right: 10%;
     margin-left: 10%;
-    width: 20%;
 }
 
 .search-container input[type=text] {
@@ -156,6 +160,7 @@ form [type='reset']:hover {
 }
 
 
+
 footer{
     display: grid;
     flex-shrink: 0; 
@@ -164,8 +169,11 @@ footer{
     grid-template-columns: 1fr 1fr;
     font-size:15px;
     line-height:24px;
+    position: fixed;
+    bottom: 0;
     
 }
+
 footer .container{
     padding:10px;
     justify-content: center;
@@ -188,9 +196,7 @@ footer li{
     list-style: none;
     display: block;
 }
-footer a:hover{
-    color:#00ADB5;
-}
+
 
 footer .copy-right{
     grid-column-start: 1;
