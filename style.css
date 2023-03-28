@@ -19,6 +19,17 @@ nav {
     display: flex;
     box-sizing: border-box;
     color: #222831;
+    top: 0;
+    width: 100%;
+    left: 0;
+    border: none;
+    position: fixed;
+    margin-bottom: 20px;
+    background-color: #EEEEEE;
+}
+
+body{
+    padding-top: 50px;
 }
 
 .logo {
@@ -118,7 +129,7 @@ form {
 }
 
 
-form input,form select{
+form input,form select,form textarea{
     width: 40%;
     border: none;
     border-radius: 3px;
@@ -141,7 +152,7 @@ form [type='reset'] {
 }
 
 form [type='submit']:hover {
-    background-color: #222831;
+    background-color: #7D8F69;
     color: #F5F5F5;
 
 }
@@ -150,4 +161,41 @@ form [type='reset']:hover {
     background-color: #850000;
     color: #F5F5F5;
 
+}
+
+
+footer{
+    display: grid;
+    background-color: #EEEEEE;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr;
+    font-size:15px;
+    line-height:24px;
+    
+}
+footer .container{
+    padding:10px;
+    justify-content: center;
+}
+
+footer .container h3{
+    font-size:16px;
+    text-transform:uppercase;
+    margin-top:5px;
+    letter-spacing:2px
+  
+}
+footer ul{
+    padding-left: 0;
+    
+}
+footer li{
+    list-style: none;
+    display: block;
+}
+footer a:hover{
+    color:#00ADB5;
 }
