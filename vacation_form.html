@@ -1,80 +1,81 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-    
-    <nav>
-      <button style="font-style: italic;">
-        <a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-            Home Page
-        </a>
-    </button>
-      <button style="font-style: italic;">
-          <a href="add.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-              Add Employee
-          </a>
-      </button>
-      <button style=" font-style: italic; " >
-          <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-              Edit Employee
-          </a>
-      </button>
-      <button style="font-style: italic;">
-          <a href="search.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-              Search For Employee
-          </a>
-      </button>
-      
-      <button style="font-style: italic;">
-          <a href="vacation_requsets.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-            Submitted Vacations
-          </a>
-      </button>
-</nav>
-  <hr>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vacation form</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-
-  <body>
-    <h1 style="font-style: italic;">Vacation Form</h1>
-    <form>
-
-      <div>
-        <label>Employee ID</label>
-        <input type="text" required name="id" autofocus>
-
+  <header>
+    <nav>
+      <div class="logo">
+        <span><a href="index.html"> HR System</a></span>
       </div>
 
-      <br>
+      <div class="search-container">
+        <input class="" type="text" placeholder="Employee Name" />
+        <button onclick="">Search</button>
+      </div>
+
+      <ul class="links">
+        <li>
+          <a href="index.html"> Home Page </a>
+        </li>
+        <li>
+          <a href="add.html"> Add Employee </a>
+        </li>
+        <li>
+          <a href="search.html"> Search For Employee </a>
+        </li>
+        <li class="active">
+          <a href="vacation_form.html"> Submit Vacation </a>
+        </li>
+        <li>
+          <a href="vacation_requsets.html"> Submitted Vacations </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <h1>Vacation Form</h1>
+    <form>
+      <div>
+        <label>Employee ID</label>
+        <input type="text" required name="id" autofocus />
+      </div>
+
+      <br />
 
       <div>
         <label>From Date </label>
-        <input type="date" required name="from date">
-
+        <input type="date" required name="from date" />
       </div>
 
-      <br>
+      <br />
 
       <div>
         <label>To Date </label>
-        <input type="date" required name="to date">
-
+        <input type="date" required name="to date" />
       </div>
 
-      <br>
+      <br />
 
       <div>
         <label>Reason</label>
-        <input type="text" required name="reason" placeholder="Enter the reason">
-
+        <input
+          type="text"
+          required
+          name="reason"
+          placeholder="Enter the reason"
+        />
       </div>
 
-      <br>
+      <br />
 
-      <br>
-      <input type="submit">
-      
-
+      <br />
+      <input type="submit" />
     </form>
   </body>
-
 </html>

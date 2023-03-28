@@ -1,113 +1,151 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>add employee</title>
-        <meta name = "discription" content="adding new employee data"/>
-        <nav>
-            <button style="font-style: italic;">
-                <a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Home Page
-                </a>
-            </button>
-            <button style=" font-style: italic; " >
-                <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Edit Employee
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="search.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Search For Employee
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Submit Vacation
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="vacation_requsets.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Submitted Vacations
-                </a>
-            </button>
-		</nav>
-        <hr>
-    </head>
-    <body>
-        
-        <div>
-            <h2 style="font-style: italic;">Add Employee</h2>
-        </div>
-        <form>
-            <div>
-                <label for="name">Name: </label>
-                <input type="text" id="name" required/>
-            </div>
-            <br>
-            <div>
-                <label for="id">ID: </label>
-                <input type="number" name = "id" id="id"  minlength = "1" maxlength = "2000" required/>
-            </div>
-            <br>
-            <div>
-                <label for="mail">Email: </label>
-                <input type="email" id="mail" name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
-            </div>
-            <br>
-            <div>
-                <label for="add">Address: </label>
-                <input type="text" name = "address" id="add" minlength = "10" maxlength = "50" required />
-            </div>
-            <br>
-            <div>
-                <label for="phone">Phone number: </label>
-                <input type="tel" id="phone" name="phone" pattern="^01[0-2]\d{1,8}$" required>
-            </div>
-            <br>
-            <div>
-                <label for="gender">Gender</label>
-                <select name="gender" id="gender">
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="state">Matrial status</label>
-                <select name="state" id="state">
-                    <option value="single">single</option>
-                    <option value="married">married</option>
-                    <option value="widowed">widowed</option>
-                    <option value="divorced">divorced</option>
-                    <option value="separated">separated</option>
-                    <option value="other">other</option>
-                </select>
-            </div>
-            <br>
-            <div>
-                <label for="vac">Number of available vacation days:</label>
-                <input type="number" id="vac" name="vacation" min = "1" max="3" required>
-            </div>
-            <br>
-            <div>
-                <label for="avac">Number of actual approved vacation days:</label>
-                <input type="number" id="avac" name="avacation" min = "1" max="3" required>
-            </div>
-            <br>
-            <div>
-                <label for="salary">Salary: </label>
-                <input type="number" id="Salary" name = salary  min = "2000" max= "6000" required/>
-            </div>
-            <br>
-            <div>
-                <label for="birth">Date of birth: </label>
-                <input type="date" id="birth" name = "date of birth" required/>
-            </div>
-            <br>
-            <input type="submit"> 
-            <input type="reset">
-        </form>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>add employee</title>
+  </head>
+  <header>
+    <nav>
+      <div class="logo">
+        <span><a href="index.html"> HR System</a></span>
+      </div>
 
-    </body>
+      <div class="search-container">
+        <input class="" type="text" placeholder="Employee Name" />
+        <button onclick="">Search</button>
+      </div>
 
+      <ul class="links">
+        <li>
+          <a href="index.html"> Home Page </a>
+        </li>
+        <li class="active">
+          <a href="add.html"> Add Employee </a>
+        </li>
+        <li>
+          <a href="search.html"> Search For Employee </a>
+        </li>
+        <li>
+          <a href="vacation_form.html"> Submit Vacation </a>
+        </li>
+        <li>
+          <a href="vacation_requsets.html"> Submitted Vacations </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <div>
+      <h2>Add Employee</h2>
+    </div>
+    <form class="add-emp">
+      <div>
+        <label for="id">ID </label>
+        <input
+          type="number"
+          name="id"
+          id="id"
+          minlength="1"
+          maxlength="2000"
+          required
+        />
+      </div>
+      <div>
+        <label for="name">Name </label>
+        <input type="text" id="name" required />
+      </div>
+      <div>
+        <label for="mail">Email </label>
+        <input
+          type="email"
+          id="mail"
+          name="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          required
+        />
+      </div>
+      <div>
+        <label for="add">Address </label>
+        <input
+          type="text"
+          name="address"
+          id="add"
+          minlength="10"
+          maxlength="50"
+          required
+        />
+      </div>
+      <div>
+        <label for="phone">Phone number </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          pattern="^01[0-2]\d{1,8}$"
+          required
+        />
+      </div>
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div>
+        <label for="state">Matrial status</label>
+        <select name="state" id="state">
+          <option value="single">single</option>
+          <option value="married">married</option>
+          <option value="widowed">widowed</option>
+          <option value="divorced">divorced</option>
+          <option value="separated">separated</option>
+          <option value="other">other</option>
+        </select>
+      </div>
+      <div>
+        <label for="vac">Number of available vacation days</label>
+        <input
+          type="number"
+          id="vac"
+          name="vacation"
+          min="1"
+          max="3"
+          required
+        />
+      </div>
+      <div>
+        <label for="avac">Number of actual approved vacation days</label>
+        <input
+          type="number"
+          id="avac"
+          name="avacation"
+          min="1"
+          max="3"
+          required
+        />
+      </div>
+      <div>
+        <label for="salary">Salary </label>
+        <input
+          type="number"
+          id="Salary"
+          name="salary"
+          min="2000"
+          max="6000"
+          required
+        />
+      </div>
+      <div>
+        <label for="birth">Date of birth </label>
+        <input type="date" id="birth" name="date of birth" required />
+      </div>
+
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
 </html>

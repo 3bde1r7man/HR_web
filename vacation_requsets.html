@@ -1,95 +1,101 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> Submitted Vacations </title>
-        <nav>
-            <button style="font-style: italic;">
-                <a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Home Page
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="add.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Add Employee
-                </a>
-            </button>
-            <button style=" font-style: italic; " >
-                <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Edit Employee
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="search.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Search For Employee
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Submit Vacation
-                </a>
-            </button>
-      </nav>
-        <hr>
-    </head>
-    <body>
-        <h1 style="font-style: italic ;"> Submitted Vacations</h1>
-        <table border="1" bgcolor = "teal">
-            <thead>
-                <tr bgcolor = "white">
-                    <th> Emploee ID </th>
-                    <th> From Date </th>
-                    <th> To Date </th>
-                    <th> Reason </th>
-                    <th> Status </th>
-                    <th> Action </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> <font color="white"> 1 </font> </td>
-                    <td> <font color="white">2023-03-09 </font></td>
-                    <td> <font color="white"> 2023-03-11 </font> </td>
-                    <td> <font color="white"> Compassionate Leave </font> </td>
-                    <td> <font color="white"> Submitted </font> </td>
-                    <td> 
-                        <input type="button" value="Approve">
-                        <input type="button" value="Reject">
-                    </td>
-                </tr>
-                <tr>
-                    <td> <font color="white"> 2 </font> </td>
-                    <td> <font color="white"> 2023-03-20 </font></td>
-                    <td> <font color="white"> 2023-03-25 </font> </td>
-                    <td> <font color="white"> Sick Leave </font> </td>
-                    <td> <font color="white"> Submitted </font> </td>
-                    <td> 
-                        <input type="button" value="Approve">
-                        <input type="button" value="Reject"> 
-                    </td>
-                </tr>
-                <tr>
-                    <td> <font color="white"> 3 </font> </td>
-                    <td> <font color="white"> 2023-04-01 </font> </td>
-                    <td> <font color="white"> 2023-04-10 </font> </td>
-                    <td> <font color="white"> Ordinary Leave </font></td>
-                    <td> <font color="white"> Submitted </font> </td>
-                    <td> 
-                        <input type="button" value="Approve">
-                        <input type="button" value="Reject"> 
-                    </td>
-                </tr>
-                <tr>
-                    <td> <font color="white"> 4 </font> </td>
-                    <td> <font color="white"> 2023-05-08 </font></td>
-                    <td> <font color="white"> 2023-05-12 </font></td>
-                    <td> <font color="white">Travel Leave</font></td>
-                    <td> <font color="white"> Submitted </font> </td>
-                    <td> 
-                        <input type="button" value="Approve">
-                        <input type="button" value="Reject">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submitted Vacations</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <header>
+    <nav>
+      <div class="logo">
+        <span><a href="index.html"> HR System</a></span>
+      </div>
+
+      <div class="search-container">
+        <input class="" type="text" placeholder="Employee Name" />
+        <button onclick="">Search</button>
+      </div>
+
+      <ul class="links">
+        <li>
+          <a href="index.html"> Home Page </a>
+        </li>
+        <li>
+          <a href="add.html"> Add Employee </a>
+        </li>
+        <li>
+          <a href="search.html"> Search For Employee </a>
+        </li>
+        <li>
+          <a href="vacation_form.html"> Submit Vacation </a>
+        </li>
+        <li class="active">
+          <a href="vacation_requsets.html"> Submitted Vacations </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <h1>Submitted Vacations</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Emploee ID</th>
+          <th>From Date</th>
+          <th>To Date</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2023-03-09</td>
+          <td>2023-03-11</td>
+          <td>Compassionate Leave</td>
+          <td>Submitted</td>
+          <td>
+            <input type="button" value="Approve" />
+            <input type="button" value="Reject" />
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>2023-03-20</td>
+          <td>2023-03-25</td>
+          <td>Sick Leave</td>
+          <td>Submitted</td>
+          <td>
+            <input type="button" value="Approve" />
+            <input type="button" value="Reject" />
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>2023-04-01</td>
+          <td>2023-04-10</td>
+          <td>Ordinary Leave</td>
+          <td>Submitted</td>
+          <td>
+            <input type="button" value="Approve" />
+            <input type="button" value="Reject" />
+          </td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>2023-05-08</td>
+          <td>2023-05-12</td>
+          <td>Travel Leave</td>
+          <td>Submitted</td>
+          <td>
+            <input type="button" value="Approve" />
+            <input type="button" value="Reject" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
 </html>

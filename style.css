@@ -1,0 +1,153 @@
+* {
+    font-family: monospace;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+nav {
+    display: flex;
+    box-sizing: border-box;
+    color: #222831;
+}
+
+.logo {
+    object-fit: contain;
+    align-self: center;
+    font-size: larger;
+    font-family: 'Courier New';
+    padding: 10px;
+    float: left;
+    width: 10%;
+}
+
+.links {
+    width: 60%;
+    text-align: right;
+}
+
+.links li {
+    display: inline-block;
+    list-style: none;
+    font-family: monospace;
+    padding: 10px;
+
+}
+
+.links li:hover,
+.links li.active {
+    color: #00ADB5;
+    border-bottom: 2px solid #00ADB5;
+
+}
+
+.search-container {
+    display: inline-flex;
+    float: left;
+    align-self: center;
+    margin-right: 10px;
+    margin-left: 10%;
+    width: 20%;
+}
+
+.search-container input[type=text] {
+    padding: 10px;
+    border: none;
+}
+
+.search-container button {
+    float: right;
+}
+
+button,input[type='button'] {
+    background-color: #00ADB5;
+    border: none;
+    color: white;
+    padding: auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover,input[type='button']:hover {
+    background-color: #222831;
+}
+
+button:active,input[type='button']:active {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+table {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+
+}
+
+li {
+    list-style: '- ';
+}
+
+
+table td {
+    text-align: center;
+    padding: 1%;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    width: 50%;
+}
+
+
+form input,form select{
+    width: 40%;
+    border: none;
+    border-radius: 3px;
+    background-color: #F5F5F5;
+    
+}
+form label{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 30%;
+}
+form div{
+    margin:5px;
+    flex-direction: row-reverse;
+}
+form [type='submit'],
+form [type='reset'] {
+    margin: 10px;
+    width:70%;
+}
+
+form [type='submit']:hover {
+    background-color: #222831;
+    color: #F5F5F5;
+
+}
+
+form [type='reset']:hover {
+    background-color: #850000;
+    color: #F5F5F5;
+
+}

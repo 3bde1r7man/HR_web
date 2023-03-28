@@ -1,79 +1,127 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Search</title>
-        <nav>
-            <button style="font-style: italic;">
-                <a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Home Page
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="add.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Add Employee
-                </a>
-            </button>
-            <button style=" font-style: italic; " >
-                <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Edit Employee
-                </a>
-            </button>
-            
-            <button style="font-style: italic;">
-                <a href="vacation_form.html"style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Submit Vacation
-                </a>
-            </button>
-            <button style="font-style: italic;">
-                <a href="vacation_requsets.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-                    Submitted Vacations
-                </a>
-            </button>
-		</nav>
-        <hr>
-    </head>
-    <body>
-        <label>Search:</label>
-			<input type= "text" placeholder="Employee Name">
-        <button onclick="">Search</button> <br> <br>
-        <table style="border: 1px;">
-            <tr>
-                <th> Name </th>
-                <th> Submit vacation </th>
-                <th> Edit data </th>
-            </tr>
-            <tr>
-                <td> Seif Ibrahim </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
-            <tr>
-                <td> Abdelrhman Mostafa </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
-            <tr>
-                <td> Ahmed hanafy </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
-            <tr>
-                <td> Youssef Atya </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
-            <tr>
-                <td> Salma Abdelaziz </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
-            <tr>
-                <td> Shahd Osama </td>
-                <td> <button> <a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Submit form </a> </button> </td>
-                <td> <button> <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);"> Edit data </a> </button> </td>
-            </tr>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Search</title>
+  </head>
+  <header>
+    <nav>
+      <div class="logo">
+        <span><a href="index.html"> HR System</a></span>
+      </div>
 
-        </table>
-            
-    </body>
+      <div class="search-container">
+        <input class="" type="text" placeholder="Employee Name" />
+        <button onclick="">Search</button>
+      </div>
+
+      <ul class="links">
+        <li>
+          <a href="index.html"> Home Page </a>
+        </li>
+        <li>
+          <a href="add.html"> Add Employee </a>
+        </li>
+        <li class="active">
+          <a href="search.html"> Search For Employee </a>
+        </li>
+        <li>
+          <a href="vacation_form.html"> Submit Vacation </a>
+        </li>
+        <li>
+          <a href="vacation_requsets.html"> Submitted Vacations </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Submit vacation</th>
+        <th>Edit data</th>
+      </tr>
+      <tr>
+        <td>Seif Ibrahim</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Abdelrhman Mostafa</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Ahmed hanafy</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Youssef Atya</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Salma Abdelaziz</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Shahd Osama</td>
+        <td>
+          <button>
+            <a href="vacation_form.html"> Submit form </a>
+          </button>
+        </td>
+        <td>
+          <button>
+            <a href="edit.html"> Edit data </a>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </body>
 </html>

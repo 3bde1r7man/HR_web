@@ -1,86 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Edit/Delete Employee</title>
-	<nav>
-		<button style=" font-style: italic; " >
-			<a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-				Home Page
-			</a>
-		</button>
-		<button style="font-style: italic;">
-			<a href="add.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-				Add Employee
-			</a>
-		</button>
-		<button style="font-style: italic;">
-			<a href="search.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-				Search For Employee
-			</a>
-		</button>
-		<button style="font-style: italic;">
-			<a href="vacation_form.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-				Submit Vacation
-			</a>
-		</button>
-		<button style="font-style: italic;">
-			<a href="vacation_requsets.html" style="text-decoration: none; color: rgb(46, 46, 46);">
-				Submitted Vacations
-			</a>
-		</button>
-	</nav>
-	<hr>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit/Delete Employee</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <header>
+    <nav>
+      <div class="logo">
+        <span><a href="index.html"> HR System</a></span>
+      </div>
 
-	<main>
-		<h1 style="font-style: italic;">Update/Delete Employee</h1>
-		<form action="#" method="POST">
-			<label for="id">ID:</label>
-			<input type="text" id="id" name="id" required><br>
-			<br>
-			<label for="name">Name:</label>
-			<input type="text" id="name" name="name" required><br>
-			<br>
-			<label for="email">Email:</label>
-			<input type="email" id="email" name="email" required><br>
-			<br>
-			<label for="address">Address:</label>
-			<input type="text" id="address" name="address" required><br>
-			<br>
-			<label for="phone">Phone:</label>
-			<input type="tel" id="phone" name="phone" required><br>
-			<br>
-			<label for="gender">Gender:</label>
-			<select id="gender" name="gender" required>
-				<option value="male">Male</option>
-				<option value="female">Female</option>
-			</select><br>
-			<br>
-			<label for="marital_status">Marital Status:</label>
-			<select id="marital_status" name="marital_status" required>
-				<option value="single">Single</option>
-				<option value="married">Married</option>
-				<option value="divorced">Divorced</option>
-				<option value="widowed">Widowed</option>
-			</select><br>
-			<br>
-			<label for="available_vacation_days">Available Vacation Days:</label>
-			<input type="number" id="available_vacation_days" name="available_vacation_days" required><br>
-			<br>
-			<label for="actual_approved_vacation_days">Actual Approved Vacation Days:</label>
-			<input type="number" id="actual_approved_vacation_days" name="actual_approved_vacation_days" required><br>
-			<br>
-			<label for="salary">Salary:</label>
-			<input type="number" id="salary" name="salary" required><br>
-			<br>
-			<label for="date_of_birth">Date of Birth:</label>
-			<input type="date" id="date_of_birth" name="date_of_birth" required><br>
-			<br>
-			<input type="submit" value="Update">
-			<input type="submit" value="Delete">
-		</form>
-	</main>
-	
-</body>
+      <div class="search-container">
+        <input class="" type="text" placeholder="Employee Name" />
+        <button onclick="">Search</button>
+      </div>
+
+      <ul class="links">
+        <li>
+          <a href="index.html"> Home Page </a>
+        </li>
+        <li>
+          <a href="add.html"> Add Employee </a>
+        </li>
+        <li>
+          <a href="search.html"> Search For Employee </a>
+        </li>
+        <li>
+          <a href="vacation_form.html"> Submit Vacation </a>
+        </li>
+        <li>
+          <a href="vacation_requsets.html"> Submitted Vacations </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+    <main>
+      <h1>Update/Delete Employee</h1>
+      <form action="#" method="POST">
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id" required />
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required />
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" required />
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="marital_status">Marital Status</label>
+        <select id="marital_status" name="marital_status" required>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+          <option value="widowed">Widowed</option>
+        </select>
+        <label for="available_vacation_days">Available Vacation Days</label>
+        <input
+          type="number"
+          id="available_vacation_days"
+          name="available_vacation_days"
+          required
+        />
+        <label for="actual_approved_vacation_days"
+          >Actual Approved Vacation Days</label
+        >
+        <input
+          type="number"
+          id="actual_approved_vacation_days"
+          name="actual_approved_vacation_days"
+          required
+        />
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" name="salary" required />
+        <label for="date_of_birth">Date of Birth</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required />
+        <input type="submit" value="Update" />
+        <input type="submit" value="Delete" />
+      </form>
+    </main>
+  </body>
 </html>
