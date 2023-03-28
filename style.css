@@ -24,6 +24,7 @@ body {
 
 }
 
+/* nav styling */
 nav {
     display: flex;
     justify-content: space-between;
@@ -106,7 +107,7 @@ button:active,input[type='button']:active {
     color: black;
 }
 
-
+/* end of nav styling */
 
 li {
     list-style: '- ';
@@ -117,6 +118,8 @@ table td {
     text-align: center;
     padding: 1%;
 }
+
+/* form styling */
 
 form {
     display: flex;
@@ -159,8 +162,10 @@ form [type='reset']:hover {
 
 }
 
+/* end of form styling */
 
 
+/* footer styling */
 footer{
     display: grid;
     flex-shrink: 0; 
@@ -205,3 +210,4 @@ footer .copy-right{
     margin-left: 20px;
     margin-right: 20px;
 }
+/* end of footer styling */
