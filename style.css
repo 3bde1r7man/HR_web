@@ -1,4 +1,4 @@
-.welcome,.nav{
+.welcome{
     font-family: Hey Comic;
 }
 
@@ -12,31 +12,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
-
-
-.nav {
-    background-color: rgb(0, 0, 0, 0.4); 
-    overflow: hidden;
-}
-
-
-.nav a {
-    float: left;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.active {
-    background-color: #67a7ff;
-}
-
-
-.nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
 
 h1, h2 {
     text-align: center;
