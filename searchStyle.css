@@ -1,0 +1,72 @@
+*{
+    font-family: Liberation Sans ;
+}
+button {
+    border-radius: 50px;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    font-family: Hey Comic;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #0059e6, #03327d);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button a{
+    color: white;
+    border-radius: 50px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+}
+
+.button2 {
+    background: linear-gradient(to bottom, #0059e6, #03327d);
+}
+
+.search-bar {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    flex: 1;
+    width: 93%;
+    border-radius: 50px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.place::placeholder{
+    padding-left: 50px;
+    
+}
+

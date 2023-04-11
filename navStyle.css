@@ -1,7 +1,7 @@
 .nav {
     font-family: Hey Comic;
     position: sticky;
-    background-color: rgba(0, 0, 0, 0.4); 
+    background: linear-gradient(to bottom, #0059e6, #03327d);
     overflow: hidden;
 }
 
