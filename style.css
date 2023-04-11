@@ -35,7 +35,7 @@ div.form-container{
 
 }
 
-form > div{
+.form-group{
     display: inline-flex;
     margin: 1em;
     position: relative;
@@ -89,6 +89,8 @@ svg{
     position: absolute;
     bottom: 0;
 }
+
+
 
 @media (max-width: 1000px) {
     div.office-img {
