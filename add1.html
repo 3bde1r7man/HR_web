@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <div>
+        
+    </div>
     <head>
         <meta charset="UTF-8"/>
         <title>add employee</title>
@@ -17,33 +20,34 @@
         <div class ="f"></div>
         <div class="a">
             <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-            <input type="text" class="x" placeholder="First name" required/>
+            <input type="text" id="firstname" class="x" placeholder="First name" required/>
     
         </div>
         <div class="b">
             <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-            <input type="text" class="x1" placeholder="Last name" required/>
+            <input type="text" id="lastname" class="x1" placeholder="Last name" required/>
     
         </div>
         <div class="c">
             <i class="fa fa-envelope" style="font-size: 1.5em;"></i>
-            <input type="email" class="x2" placeholder="Your e-mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+            <input type="email" class="x2" id="email" placeholder="Your e-mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
     
         </div>
         <div class="d">
             <i class="fa fa-lock" style="font-size: 1.5em;"></i>
-            <input type="number" class="x3" placeholder="User id" min = "1" max = "2000" required/>
+            <input type="number" class="x3" id="userid" placeholder="User id" min = "1" max = "2000" required/>
     
         </div>
         <div class="e">
             <i class="fa fa-map-marker" style="font-size: 1.5em;"></i>
-            <input type="text" class="x4" placeholder="address"  minlength = "10" maxlength = "50" required/>
+            <input type="text" class="x4" id="address" placeholder="address"  minlength = "10" maxlength = "50" required/>
         </div>
-        <button type="submit" class="button">Continue</button>
+        <button type="submit" onclick="JS()" id="insert" class="button">Continue</button>
     </form>
     <img src="shape1.png" class="i" alt="shape" >
     <img src="shape1.png" class="i1" alt="shape">
     <img src="shape2.png" class="i2" alt="shape">
     <img src="shape3.png" class="i3" alt="shape">
+    <script src="data.js"></script>
    </body>
 </html>
