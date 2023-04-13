@@ -1,0 +1,25 @@
+.nav {
+    font-family: Hey Comic;
+    font-size: 18px;
+    position: sticky;
+    margin-top: -11px;
+    /* background: linear-gradient(to bottom, #f2ff00, #ff9d00); */
+    overflow: hidden;
+    margin-left: -11px;
+    margin-right: -11px;
+}
+
+
+.nav a {
+    float: left;
+    color: #2c2c2c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+.nav a:hover {
+    background-color: rgba(35, 0, 235, 0.1);
+}
