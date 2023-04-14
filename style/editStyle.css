@@ -1,10 +1,12 @@
 html, body {
     height: 100%;
     margin: 0;
-  }
+}
+
 body {
     display: flex;
 }
+
 h1{
     font-family: cursive;
     font-weight: bold;

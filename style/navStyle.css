@@ -1,11 +1,8 @@
 .nav {
     font-family: Hey Comic;
     position: sticky;
-    margin-top: -11px;
-    /* background: linear-gradient(to bottom, #f2ff00, #ff9d00); */
+    background: linear-gradient(to bottom, #0059e6, #03327d);
     overflow: hidden;
-    margin-left: -11px;
-    margin-right: -11px;
 }
 
 
@@ -17,7 +14,9 @@
     text-decoration: none;
 }
 
-
+.active {
+    background-color: #67a7ff;
+}
 
 .nav a:hover {
     background-color: rgba(255, 255, 255, 0.1);
