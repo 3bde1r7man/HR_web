@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Search</title>
+        <script src="../js/search.js" defer> </script>
         <link rel="stylesheet" href="../style/navStyle2.css">
         <link rel="stylesheet" href="../style/searchStyle.css">
         <nav>
@@ -24,22 +25,22 @@
     <body>
         <div class="search-bar">
 			<input type= "text" class="place" placeholder="Employee Name">
-            <button onclick="" class="searchButton">Search</button> 
+            <button onclick="search()" class="searchButton">Search</button> 
         </div>
-        <table style="border: 1px;">
+        <table style="border: 1px;" table>
             <tr>
                 <th> Name </th>
                 <th> Submit Vacation </th>
                 <th> Edit Data </th>
             </tr>
-            <template>
+            <template users-template>
                 <tr>
-                    <td id="name"></td>
+                    <td user-name></td>
                     <td> 
-                        <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
+                        <button class="button1" submit-vac><a href="vacation_form.html"> Submit form </a></button>
                     </td>
                     <td>
-                        <button class="button2"><a href="edit.html"> Edit data </a> </button> 
+                        <button class="button2" edit-user><a href="edit.html"> Edit data </a> </button> 
                     </td>
                 </tr>
             </template> 
