@@ -1,98 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vacation form</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <header>
+    <title>Vacation Form</title>
+    <link rel="stylesheet" href="navStyle.css">
     <nav>
-      <div class="logo">
-        <span><a href="index.html"> HR System</a></span>
+      <div class="nav">
+          <a href="home_page.html" >
+            Home Page
+          </a>
+          <a href="add1.html">
+            Add Employee
+          </a>
+          <a href="search.html">
+            Search For Employee
+          </a>
+          <a href="vacation_requsets.html">
+            Submitted Vacations
+          </a>
       </div>
-
-      <div class="search-container">
-        <input class="" type="text" placeholder="Employee Name" />
-        <button onclick="">Search</button>
-      </div>
-
-      <ul class="links">
-        <li>
-          <a href="index.html"> Home Page </a>
-        </li>
-        <li>
-          <a href="add.html"> Add Employee </a>
-        </li>
-        <li>
-          <a href="search.html"> Search For Employee </a>
-        </li>
-        <li class="active">
-          <a href="vacation_form.html"> Submit Vacation </a>
-        </li>
-        <li>
-          <a href="vacation_requsets.html"> Submitted Vacations </a>
-        </li>
-      </ul>
     </nav>
-  </header>
+  </head>
 
   <body>
-    <h1>Vacation Form</h1>
-    <form action="vacation_requsets.html">
+    <h1 style="font-style: italic;">Vacation Form</h1>
+    <form>
+
       <div>
         <label>Employee ID</label>
-        <input type="text" required name="id"></input>
+        <input type="text" required name="id" autofocus>
+
       </div>
 
-      <br />
+      <br>
 
       <div>
         <label>From Date </label>
-        <input type="date" required name="from date" />
+        <input type="date" required name="from date">
+
       </div>
 
-      <br />
+      <br>
 
       <div>
         <label>To Date </label>
-        <input type="date" required name="to date" />
+        <input type="date" required name="to date">
+
       </div>
 
-      <br />
+      <br>
 
       <div>
         <label>Reason</label>
-        <textarea
-        type="text" required name="reason" placeholder="Enter the reason"></textarea>
+        <input type="text" required name="reason" placeholder="Enter the reason">
+
       </div>
 
-      <br />
+      <br>
 
-      <br />
-      <input type="submit" />
+      <br>
+      <input type="submit">
+      
+
     </form>
   </body>
-  <footer>
-    <div class="container">
-        <h3>About</h3>
-        <p>Our HR system is a comprehensive platform designed to streamline all aspects of human resources management in organizations. From recruitment and onboarding to performance evaluation and employee development, our system provides a range of tools and features to help HR professionals optimize their workflow and enhance employee engagement.</p>
-    </div>
-    <div class="container">
-        <h3>Quick Links</h3>
-        <ul>
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="search.html">Search</a></li>
-            <li><a href="vacation_form.html">vacation form</a></li>
-            <li><a href="vacation_requsets.html">vacation requsets</a></li>
-            <li><a href="add.html">add</a></li>
-            <li><a href="edit.html">edit</a></li>
-        </ul>
-    </div>
-    <div class="copy-right">
-        <hr/>
-        <p>COPY RIGHT STATMENT e.g: Copyright 2023 HR System, LLC</p>
-    </div>
-</footer>
+
 </html>
