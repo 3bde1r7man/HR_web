@@ -2,6 +2,7 @@
     font-family: Liberation Sans ;
     font-weight: bold;
 }
+
 button {
     border-radius: 50px;
     background-image: linear-gradient(90deg, #fdc201, #ff9e06);
@@ -92,7 +93,6 @@ h1{
 
 table{
     position: absolute;
-    z-index: 2;
     left: 50%;
     top: 52%;
     transform: translate(-50%, -50%);
@@ -119,14 +119,6 @@ th {
     font-family: Liberation Sans;
 }
 
-td{
-    color: #0059e6;
-    font-family: Liberation Sans;
-}
-
-tr:nth-child(odd) {
-    background-color: #f3f3f3;
-}
 
 .button1 {
     color: #03327d;
