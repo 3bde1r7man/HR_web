@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Search</title>
+        <script src="script.js"> </script>
         <link rel="stylesheet" href="navStyle.css">
         <link rel="stylesheet" href="searchStyle.css">
         <nav>
@@ -15,7 +16,7 @@
                 <a href="search.html" class="active">
                     Search For Employee
                 </a>
-                <a href="vacation_requsets.html">
+                <a href="vacation_requsets.html">       
                     Submitted Vacations
                 </a>
             </div>
@@ -23,8 +24,8 @@
     </head>
     <body>
         <div class="search-bar">
-			<input type= "text" class="place" placeholder="Employee Name">
-            <button onclick="" class="searchButton">Search</button> 
+			<input type="text" id="search" class="place" placeholder="Employee Name">
+            <button onclick="test()" class="searchButton">Search</button> 
         </div>
         <table style="border: 1px;">
             <tr>
@@ -32,61 +33,17 @@
                 <th> Submit Vacation </th>
                 <th> Edit Data </th>
             </tr>
-            <tr>
-                <td> Seif Ibrahim </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-                
-            </tr>
-            <tr>
-                <td> Abdelrhman Mostafa </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-            </tr>
-            <tr>
-                <td> Ahmed hanafy </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-            </tr>
-            <tr>
-                <td> Youssef Atya </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-            </tr>
-            <tr>
-                <td> Salma Abdelaziz </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-            </tr>
-            <tr>
-                <td> Shahd Osama </td>
-                <td> 
-                    <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
-                </td>
-                <td>
-                    <button class="button2"><a href="edit.html"> Edit data </a> </button> 
-                </td>
-            </tr>
+            <template>
+                <tr>
+                    <td id="name"></td>
+                    <td> 
+                        <button class="button1"><a href="vacation_form.html"> Submit form </a></button>
+                    </td>
+                    <td>
+                        <button class="button2"><a href="edit.html"> Edit data </a> </button> 
+                    </td>
+                </tr>
+            </template> 
         </table>
     </body>
 </html>
