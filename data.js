@@ -10,10 +10,9 @@ function JS() {
     localStorage.setItem(`userid ${userid}`, userid);
     localStorage.setItem(`address ${userid}`, address);
     localStorage.setItem(`id`, userid);
-}
+  }
 
-
-function JS2() {
+  function JS2() {
     var total = 0;
     const id = localStorage.getItem("id");
     const gender = document.getElementById("gender").value;
@@ -31,4 +30,4 @@ function JS2() {
     localStorage.setItem(`date ${id}`, date);
     localStorage.setItem(`salary ${id}`, salary);
     localStorage.setItem(`Total employees`, ++total);
-}
+  }

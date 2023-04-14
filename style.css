@@ -1,26 +1,99 @@
-.welcome{
-    font-family: Hey Comic;
-}
-
 html, body {
     height: 100%;
-}
-
-body {
-    background: linear-gradient(to bottom, #0059e6, #03327d);
-    color: #fff;
-    font-family: Arial, sans-serif;
     margin: 0;
+  }
+body {
+    display: flex;
 }
-
-h1, h2 {
+h1{
+    font-family: cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    display: block;
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 5%;
+}
+
+div.office-img{
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    width: auto;
+
+}
+div.office-img img{
+    width: 100%;
+    height: auto;
+
+}
+div.form-container{
+    background: rgb(3,50,125);
+    background: linear-gradient(0deg, rgba(3,50,125,1) 0%, rgba(0,89,230,1) 100%);
+    display: inline-block;
+    width: auto;
+
+}
+
+.form-group{
+    display: inline-flex;
+    margin: 1em;
+    position: relative;
+    width: 15em;
+}
+
+i{
+    position: absolute;
+    padding: 1em;
+    color: #9dcce7;
+    justify-self: center;
+    align-self: center;
+}
+
+input,
+select {
+    padding: 1em;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-family: "Liberation Sans", sans-serif;
+    padding-left: 3em;
+    border: none;
+    outline: none;
+    width: 30em;
+
+}
+
+*::placeholder{
+    color: #9dcce7;
+}
+
+.button-container{
+    display: block;
+    width: auto;
+}
+.button {
+    display: inline-block;
+    color: #033480;
+    margin: 4%;
+    width: 40%;
+    padding: 0.5% 1%;
+    border: none;
+    border-radius: 50px;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+    cursor: pointer;
+    font-size: 35px;
+
+}
+
+svg{
+    position: absolute;
+    bottom: 0;
 }
 
 
-li {
-    list-style-type: '- ';
-    font-family: Liberation Sans;
-}
 
+@media (max-width: 1000px) {
+    div.office-img {
+        display: none;
+    }
+}
