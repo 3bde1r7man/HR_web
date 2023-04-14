@@ -2,67 +2,92 @@
 <html>
 
   <head>
-    <title>Vacation Form</title>
-    <link rel="stylesheet" href="../style/navStyle.css">
+    
     <nav>
-      <div class="nav">
-          <a href="home_page.html" >
+      <button style="font-style: italic;">
+        <a href="home_page.html" style="text-decoration: none; color: rgb(46, 46, 46);">
             Home Page
+        </a>
+    </button>
+      <button style="font-style: italic;">
+          <a href="add.html" style="text-decoration: none; color: rgb(46, 46, 46);">
+              Add Employee
           </a>
-          <a href="add1.html">
-            Add Employee
+      </button>
+      <button style=" font-style: italic; " >
+          <a href="edit.html" style="text-decoration: none; color: rgb(46, 46, 46);">
+              Edit Employee
           </a>
-          <a href="search.html">
-            Search For Employee
+      </button>
+      <button style="font-style: italic;">
+          <a href="search.html" style="text-decoration: none; color: rgb(46, 46, 46);">
+              Search For Employee
           </a>
-          <a href="vacation_requsets.html">
-            Submitted Vacations
+      </button>
+      
+      <button style="font-style: italic;">
+          <a href="vacation_requsets.html" style="text-decoration: none; color: rgb(46, 46, 46);">
+              Review Vacations
           </a>
-      </div>
+      </button>
     </nav>
-  </head>
+  <hr>
+  
+  <link rel =" stylesheet" href="vacation_form.css">
+  <link rel =" stylesheet" href="navStyle.css">
+  
+</head>
 
   <body>
-    <h1 style="font-style: italic;">Vacation Form</h1>
+    <div class="backgr"> <h1> Vacation Form </h1> </div>
     <form>
-
-      <div>
-        <label>Employee ID</label>
-        <input type="text" required name="id" autofocus>
-
-      </div>
-
-      <br>
-
-      <div>
-        <label>From Date </label>
-        <input type="date" required name="from date">
-
-      </div>
-
-      <br>
-
-      <div>
-        <label>To Date </label>
-        <input type="date" required name="to date">
-
-      </div>
-
-      <br>
-
-      <div>
-        <label>Reason</label>
-        <input type="text" required name="reason" placeholder="Enter the reason">
-
-      </div>
-
-      <br>
-
-      <br>
-      <input type="submit">
+    
       
-
-    </form>
+        <div class="idd">
+          <p >ID</p>
+          <input type="text" class ="eid" required name="id" disabled placeholder="2021">
+        </div>
+    
+        <br>
+    
+        <div class="empname">
+          <p>Name </p>
+          <input type="text" class ="en" required name="Employee name" disabled placeholder="shahd">
+    
+        </div>
+    
+        
+    <br>
+    
+          <div class="fDate">
+            <p>From </p>
+            <input type="text" class="fD" onfocus="(this.type = 'date')" required name="from date" placeholder="From Date">
+    
+          </div>
+    
+    <br>
+    
+          <div class="tDate">
+            <p>To </p>
+            <input type="text" class="tD" onfocus="(this.type = 'date')" required name="to date" placeholder="To Date">
+    
+          </div>
+      
+    <div class="reason">
+      <p>Reason</p><br>
+      <textarea name="subject" class="rs" cols="30" rows="5" placeholder="enter the reason"></textarea>
+    
+    </div>
+    
+    <br>
+    <br>
+          <input type="submit" value="Submit" class="sub">
+      </form>
+        
+    <img src="shape2.png" class="sh2" alt="shape">
+    <img src="shape1_right.png" class="sh1_r" alt="shape">
+    <img src="shape1_left.png" class="sh1_l" alt="shape">
+  
   </body>
-
+  
 </html>
