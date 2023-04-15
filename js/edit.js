@@ -1,7 +1,8 @@
 //retrive local storage data
-const emp_id = localStorage.getItem("current_edit_emp")
+const emp_id = localStorage.getItem("currentEmp")
 const employees = JSON.parse(localStorage.getItem("employees"))
 const employee = employees[emp_id]
+localStorage.removeItem("currentEmp")
 const form = document.querySelector('form');
 
 for (let index = 0; index < form.children.length; index++) {

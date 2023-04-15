@@ -1,32 +1,72 @@
+// local storage will be like
+// employees: {
+//   "id": {
+//     "firstName","value",
+//     "lastName","value",
+//     "email","value",
+//     "address","value",
+//     "userid","value",
+//     "gender","value",
+//     "matialStatus","value",
+//     "phoneNum","value",
+//      ... etc
+//   }
+//    "id": {
+//     "firstName","value",
+//     "lastName","value",
+//     "email","value",
+//     "address","value",
+//     "userid","value",
+//     "gender","value",
+//     "matialStatus","value",
+//     "phoneNum","value",
+//      ... etc
+//   },
+// "id": {
+//     "firstName","value",
+//     "lastName","value",
+//     "email","value",
+//     "address","value",
+//     "userid","value",
+//     "gender","value",
+//     "matialStatus","value",
+//     "phoneNum","value",
+//      ... etc
+//   }  
+// }
+
+
 function JS() {
+  let employees = JSON.parse(localStorage.getItem("employees"))
+  if (employees == null) {
+    employees = {};
+  }
   const firstname = document.getElementById("firstname").value;
   const lastname = document.getElementById("lastname").value;
   const email = document.getElementById("email").value;
   const userid = document.getElementById("userid").value;
   const address = document.getElementById("address").value;
-  let data = `{ "firstName":"${firstname}" , "lastName":"${lastname}" , "email":"${email}","userid":"${userid}","address":"${address}" }`;
-  localStorage.setItem(userid, data);
-  localStorage.setItem(`id`, userid);
+  let data = {
+    "firstName": firstname,
+    "lastName": lastname,
+    "email": email,
+    "address": address,
+    "userid":userid
+  };
+  employees[userid] = data;
+  localStorage.setItem("employees",JSON.stringify(employees));
+  localStorage.setItem("currentEmp",userid);
 }
+
 function JS2() {
-  const id = localStorage.getItem("id");
-  let data = localStorage.getItem(id);
-  const obj = JSON.parse(data);
-  const firstname = obj["firstName"];
-  const lastname = obj["lastName"];
-  const email = obj["email"];
-  const userid = obj["userid"];
-  const address = obj["address"];
-  const gender = document.getElementById("gender").value;
-  const materialStatus = document.getElementById("materialStatus").value;
-  const phoneNum = document.getElementById("phoneNum").value;
-  const vacationNum = document.getElementById("vacationNum").value;
-  const ApprovedVactions = document.getElementById("ApprovedVactions").value;
-  const date = document.getElementById("date").value;
-  const salary = document.getElementById("salary").value;
-  let totaldata = `{ "firstName":"${firstname}" , "lastName":"${lastname}" , "email":"${email}","userid":"${userid}","address":"${address}",
-                                          "gender":"${gender}","materialStatus":"${materialStatus}","phoneNum":"${phoneNum}","vacationNum":"${vacationNum}","ApprovedVactions":"${ApprovedVactions}"}`;
-  
-  localStorage.setItem(id,totaldata);
-  
+  let employees = JSON.parse(localStorage.getItem("employees"))
+  const employee = employees[localStorage.getItem("currentEmp")];
+  employee.gender = document.getElementById("gender").value;
+  employee.materialStatus = document.getElementById("materialStatus").value;
+  employee.phoneNum = document.getElementById("phoneNum").value;
+  employee.vacationNum = document.getElementById("vacationNum").value;
+  employee.ApprovedVactions = document.getElementById("ApprovedVactions").value;
+  employee.salary = document.getElementById("salary").value;
+  employee.date = document.getElementById("date").value;
+  localStorage.setItem("employees",JSON.stringify(employees));
 }
