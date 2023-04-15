@@ -1,43 +1,35 @@
-//retrive local storage data
-const emp_id = localStorage.getItem("currentEmp")
-const employees = JSON.parse(localStorage.getItem("employees"))
-const employee = employees[emp_id]
-localStorage.removeItem("currentEmp")
+// retrieve local storage data
+const emp_id = localStorage.getItem("currentEmp");
+const employees = JSON.parse(localStorage.getItem("employees"));
+const employee = employees[emp_id];
+localStorage.removeItem("currentEmp");
 const form = document.querySelector('form');
 
-for (let index = 0; index < form.children.length; index++) {
-    const element = form.children[index].children[1];
+for (let index = 0; index < form.elements.length; index++) {
+    const element = form.elements[index];
     element.value = employee[element.name];
-    
 }
-// end of retrive local storage data
-// validating data
-const vacationNumberInput = document.querySelector('input[name="vacation number"]');
-const approvedVacationsInput = document.querySelector('input[name="approved vacations"]');
-const errorMessage = document.getElementById('error-message');
+// end of retrieve local storage data
 
 form.addEventListener('submit', event => {
-  event.preventDefault(); // prevent the form from submitting
-
-  const vacationNumber = parseInt(vacationNumberInput.value);
-  const approvedVacations = parseInt(approvedVacationsInput.value);
-
-  if (approvedVacations > vacationNumber) {
-    errorMessage.textContent = "Can't approve more vacations than available!";
-  } else {
-    errorMessage.textContent = '';
-    for (let index = 0; index < form.children.length; index++) {
-      const element = form.children[index].children[1];
-      employee[element.name] = element.value;
+    if (confirm(`Are you sure you want to save`)) {
+      for (let index = 0; index < form.elements.length; index++) {
+        const element = form.elements[index];
+        employee[element.name] = element.value;
+      }
+      localStorage.setItem("employees", JSON.stringify(employees));
+      window.location.replace("/search.html");
     }
-    form.submit(); // submit the form if everything is valid
-  }
 });
-//end of validating data
 
-//delete data
+// delete data
 function del() {
-  delete employee;
+  if (confirm(`Are you sure you want to delete ${employee.firstName}?`)) {
+    // remove the employee from the array
+    delete employees[employee.userid]
+    localStorage.setItem("employees", JSON.stringify(employees));
+    // redirect to the employee list page
+    window.location.replace("/search.html");
+  }
 }
-//end of delete data
-localStorage.setItem("employees",JSON.stringify(employees));
+// end of delete data
