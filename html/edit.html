@@ -186,29 +186,5 @@
       </svg>
     </div>
   </body>
-  <script>
-    const form = document.querySelector("form");
-    const vacationNumberInput = document.querySelector(
-      'input[name="vacation number"]'
-    );
-    const approvedVacationsInput = document.querySelector(
-      'input[name="approved vacations"]'
-    );
-    const errorMessage = document.getElementById("error-message");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); // prevent the form from submitting
-
-      const vacationNumber = parseInt(vacationNumberInput.value);
-      const approvedVacations = parseInt(approvedVacationsInput.value);
-
-      if (approvedVacations > vacationNumber) {
-        errorMessage.textContent =
-          "Can't approve more vacations than available!";
-      } else {
-        errorMessage.textContent = "";
-        form.submit(); // submit the form if everything is valid
-      }
-    });
-  </script>
+  <script src="../js/edit.js"></script>
 </html>
