@@ -1,152 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Edit Employee</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../style/editStyle.css">
-    </head>
-    <body>
-        <div class="cloumn office-img">
-            <img src="../shapes/shape3.png" alt="officeimg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Employee</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Norican&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style/editStyle.css" />
+    <link rel="stylesheet" href="../style/navStyle2.css" />
+  </head>
+  <header>
+    <nav>
+      <div class="nav">
+        <a href="home_page.html"> Home Page </a>
+        <a href="add1.html" class="active"> Add Employee </a>
+        <a href="search.html"> Search For Employee </a>
+        <a href="vacation_requsets.html"> Submitted Vacations </a>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="cloumn office-img">
+      <img src="../shapes/shape3.png" alt="officeimg" />
+    </div>
+    <div class="column form-container">
+      <h1>Edit Employee</h1>
+      <form action="search.html" method="POST">
+        <div class="form-group">
+          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
+          <input
+            type="text"
+            class="form-control"
+            name="first name"
+            placeholder="First name"
+            required
+          />
         </div>
-        <div class="column form-container ">
-            <h1>Edit Employee</h1>
-            <form action="search.html" method="POST">
-                <div class="form-group">
-                    <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-                    <input type="text" class="form-control" name="first name" placeholder="First name" required />
-                </div>
-                <div class="form-group" >
-                    <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-                    <input type="text" class="form-control" name="last name" placeholder="Last name" required />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-envelope" style="font-size: 1.5em"></i>
-                    <input type="email" class="form-control" name="email" placeholder="Your e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
-                </div>
-                <div class="form-group" >
-                    <i class="fa fa-lock" style="font-size: 1.5em"></i>
-                    <input type="number" class="form-control" name="user id" placeholder="User ID" min="1" max="2000" required />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-map-marker" style="font-size: 1.5em"></i>
-                    <input type="text" class="form-control" name="address" placeholder="Address" minlength="10" maxlength="50" required />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-phone" style="font-size: 1.5em"></i>
-                    <input
-                    type="text"
-                    class="form-control"
-                    name="phone number"
-                    placeholder="Phone number"
-                    pattern="^01[0-2]\d{1,8}$"
-                    minlength="11"
-                    maxlength="11"
-                    required
-                    />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-                    <input
-                    type="number"
-                    class="form-control"
-                    name="vacation number"
-                    placeholder="Vacation number"
-                    min="1"
-                    max="3"
-                    required
-                    />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-                    <input
-                    type="number"
-                    class="form-control"
-                    name="approved vacations"
-                    placeholder="Approved vacations"
-                    min="1"
-                    max="3"
-                    required
-                    />
-                    <span id="error-message" style="display:block; color: grey;"></span>
+        <div class="form-group">
+          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
+          <input
+            type="text"
+            class="form-control"
+            name="last name"
+            placeholder="Last name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-envelope" style="font-size: 1.5em"></i>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Your e-mail"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-lock" style="font-size: 1.5em"></i>
+          <input
+            type="number"
+            class="form-control"
+            name="user id"
+            placeholder="User ID"
+            min="1"
+            max="2000"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-map-marker" style="font-size: 1.5em"></i>
+          <input
+            type="text"
+            class="form-control"
+            name="address"
+            placeholder="Address"
+            minlength="10"
+            maxlength="50"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-phone" style="font-size: 1.5em"></i>
+          <input
+            type="text"
+            class="form-control"
+            name="phone number"
+            placeholder="Phone number"
+            pattern="^01[0-2]\d{1,8}$"
+            minlength="11"
+            maxlength="11"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-calendar" style="font-size: 1.5em"></i>
+          <input
+            type="number"
+            class="form-control"
+            name="vacation number"
+            placeholder="Vacation number"
+            min="1"
+            max="3"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-calendar" style="font-size: 1.5em"></i>
+          <input
+            type="number"
+            class="form-control"
+            name="approved vacations"
+            placeholder="Approved vacations"
+            min="1"
+            max="3"
+            required
+          />
+          <span id="error-message" style="display: block; color: grey"></span>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-calendar" style="font-size: 1.5em"></i>
+          <input
+            type="number"
+            class="form-control"
+            name="salary"
+            placeholder="Salary"
+            min="2000"
+            max="6000"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-calendar" style="font-size: 1.5em"></i>
+          <input
+            type="Date"
+            class="form-control"
+            name="date"
+            placeholder="Date"
+            min="1990-01-01"
+            max="2005-12-31"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
+          <select class="form-control" name="gender" required>
+            <option value="" selected disabled>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
+          <select class="form-control" name="marital-status" required>
+            <option value="" selected disabled>Marital Status</option>
+            <option value="single">Single</option>
+            <option value="married">Married</option>
+            <option value="widowed">widowed</option>
+            <option value="divorced">divorced</option>
+            <option value="separated">separated</option>
+            <option value="other">other</option>
+          </select>
+        </div>
+        <div class="form-group button-container">
+          <button type="submit" class="button">Save</button>
+          <button type="submit" class="button">Delete</button>
+        </div>
+      </form>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,96L40,85.3C80,75,160,53,240,74.7C320,96,400,160,480,197.3C560,235,640,245,720,218.7C800,192,880,128,960,106.7C1040,85,1120,107,1200,117.3C1280,128,1360,128,1400,128L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+  </body>
+  <script>
+    const form = document.querySelector("form");
+    const vacationNumberInput = document.querySelector(
+      'input[name="vacation number"]'
+    );
+    const approvedVacationsInput = document.querySelector(
+      'input[name="approved vacations"]'
+    );
+    const errorMessage = document.getElementById("error-message");
 
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-                    <input
-                    type="number"
-                    class="form-control"
-                    name="salary"
-                    placeholder="Salary"
-                    min="2000"
-                    max="6000"
-                    required
-                    />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-                    <input
-                    type="Date"
-                    class="form-control"
-                    name="date"
-                    placeholder="Date"
-                    min="1990-01-01"
-                    max="2005-12-31"
-                    required
-                    />
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-                    <select class="form-control" name="gender" required>
-                        <option value="" selected disabled>Gender</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-                    <select class="form-control" name="marital-status" required>
-                        <option value="" selected disabled>Marital Status</option>
-                        <option value="single">Single</option>
-                        <option value="married">Married</option>
-                        <option value="widowed">widowed</option>
-                        <option value="divorced">divorced</option>
-                        <option value="separated">separated</option>
-                        <option value="other">other</option>
-                    </select>
-                </div>
-                <div class="form-group button-container">
-                    <button type="submit" class="button">Save</button>
-                    <button type="submit" class="button">Delete</button>
-                </div>
-            </form>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,96L40,85.3C80,75,160,53,240,74.7C320,96,400,160,480,197.3C560,235,640,245,720,218.7C800,192,880,128,960,106.7C1040,85,1120,107,1200,117.3C1280,128,1360,128,1400,128L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
-        </div>
-    </body>
-    <script>
-        const form = document.querySelector('form');
-        const vacationNumberInput = document.querySelector('input[name="vacation number"]');
-        const approvedVacationsInput = document.querySelector('input[name="approved vacations"]');
-        const errorMessage = document.getElementById('error-message');
-      
-        form.addEventListener('submit', event => {
-          event.preventDefault(); // prevent the form from submitting
-      
-          const vacationNumber = parseInt(vacationNumberInput.value);
-          const approvedVacations = parseInt(approvedVacationsInput.value);
-      
-          if (approvedVacations > vacationNumber) {
-            errorMessage.textContent = "Can't approve more vacations than available!";
-          } else {
-            errorMessage.textContent = '';
-            form.submit(); // submit the form if everything is valid
-          }
-        });
-      </script>
-    </html>
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // prevent the form from submitting
+
+      const vacationNumber = parseInt(vacationNumberInput.value);
+      const approvedVacations = parseInt(approvedVacationsInput.value);
+
+      if (approvedVacations > vacationNumber) {
+        errorMessage.textContent =
+          "Can't approve more vacations than available!";
+      } else {
+        errorMessage.textContent = "";
+        form.submit(); // submit the form if everything is valid
+      }
+    });
+  </script>
+</html>

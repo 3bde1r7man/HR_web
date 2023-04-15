@@ -5,6 +5,7 @@
   top: 0;
   right: 0;  
   background-image: linear-gradient(180deg, #005bea, #032f73);
+  z-index: -1;
 }
 
 h1{

@@ -107,7 +107,9 @@ table{
     text-align: center;
     margin-top: 50px;
 }
-
+th{
+    height: 1em;
+}
 th,td{
     padding: 10px 15px;
 }
