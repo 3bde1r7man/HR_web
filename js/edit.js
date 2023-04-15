@@ -18,7 +18,6 @@ form.addEventListener('submit', event => {
         employee[element.name] = element.value;
       }
       localStorage.setItem("employees", JSON.stringify(employees));
-      window.location.replace("/search.html");
     }
 });
 
@@ -28,8 +27,6 @@ function del() {
     // remove the employee from the array
     delete employees[employee.userid]
     localStorage.setItem("employees", JSON.stringify(employees));
-    // redirect to the employee list page
-    window.location.replace("/search.html");
   }
 }
 // end of delete data
