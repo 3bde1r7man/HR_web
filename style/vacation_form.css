@@ -12,14 +12,26 @@ h1{
   font-weight:bolder;
   color: white;
   text-align: center;
-  margin-top: 15px;
+  margin-top: -5px;
   font-family:Hey Comic ;
+}
+
+form{
+  position: absolute;
+  margin-top: 255px;
+  margin-left: 758px;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 450px ;
+  border-radius: 10px;
+  background-color: #0059e6;
+  box-shadow: 0 2px 12px rgba(27, 27, 27, 0.3);
 }
 
 .idd input{    
   position: absolute;
-  top:190px;
-  left: 210px;
+  top: 30px;
+  left: 150px;
   width: 350px;
   height: 60px;
   border-radius: 10px;
@@ -43,16 +55,16 @@ h1{
 .idd p{
   position: absolute;
   font-family: sans-serif;
-  top: 160px;
-  left: 100px;
+  top: 10px;
+  left: 40px;
   font-size: 40px;
   color: white;
 }
 
 .empname input{    
   position: absolute;
-  top:190px;
-  right: 100px;
+  top:30px;
+  right: 45px;
   width: 350px;
   height: 60px;
   border-radius: 10px;
@@ -75,16 +87,16 @@ h1{
 .empname p{
   position: absolute;
   font-family: sans-serif;
-  top: 160px;
-  right: 570px;
+  top: 10px;
+  right: 520px;
   font-size: 40px;
   color: white;
 }
 
 .fDate input{    
   position: absolute;
-  top:290px;
-  left: 210px;
+  top:160px;
+  left: 150px;
   width: 350px;
   height: 60px;
   border-radius: 10px;
@@ -109,16 +121,16 @@ h1{
 .fDate p{
   position: absolute;
   font-family: sans-serif;
-  top: 260px;
-  left: 100px;
+  top: 130px;
+  left: 40px;
   font-size: 40px;
   color: white;
 }
 
 .tDate input{    
   position: absolute;
-  top:290px;
-  right: 100px;
+  top:160px;
+  right: 45px;
   width: 350px;
   height: 60px;
   border-radius: 10px;
@@ -142,17 +154,17 @@ h1{
 .tDate p{
   position: absolute;
   font-family: sans-serif;
-  top: 260px;
-  right: 630px;
+  top: 130px;
+  right: 580px;
   font-size: 40px;
   color: white;
 }
 
 .reason textarea{    
   position: absolute;
-  top:390px;
-  left: 250px;
-  width: 1150px;
+  top:290px;
+  left: 200px;
+  width: 950px;
   height: 140px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -178,8 +190,8 @@ h1{
 .reason p{
   position: absolute;
   font-family: sans-serif;
-  top: 360px;
-  left: 100px;
+  top: 240px;
+  left: 40px;
   font-size: 40px;
   color: white;
   
@@ -192,7 +204,7 @@ h1{
   color: #033480;
   width: 300px;
   height: 60px;
-  margin: 410px 0 0 620px;
+  margin: 380px 0 0 480px;
   position:absolute;
   cursor: pointer;
   font-size: 30px;
