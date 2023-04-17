@@ -52,15 +52,6 @@ form{
   left: 50px;
 }
 
-/* .idd p{
-  position: absolute;
-  font-family: sans-serif;
-  top: 10px;
-  left: 40px;
-  font-size: 40px;
-  color: white;
-} */
-
 .empname input{    
   position: absolute;
   top:30px;
@@ -83,15 +74,6 @@ form{
   top: 15px;
   left: 50px;
 }
-
-/* .empname p{
-  position: absolute;
-  font-family: sans-serif;
-  top: 10px;
-  right: 465px;
-  font-size: 40px;
-  color: white;
-} */
 
 .fDate input{    
   position: absolute;
@@ -118,15 +100,6 @@ form{
   
 }
 
-/* .fDate p{
-  position: absolute;
-  font-family: sans-serif;
-  top: 130px;
-  left: 40px;
-  font-size: 40px;
-  color: white;
-} */
-
 .tDate input{    
   position: absolute;
   top:160px;
@@ -150,15 +123,6 @@ form{
   top: 15px;
   left: 50px;
 }
-
-/* .tDate p{
-  position: absolute;
-  font-family: sans-serif;
-  top: 130px;
-  right: 530px;
-  font-size: 40px;
-  color: white;
-} */
 
 .reason textarea{    
   position: absolute;
@@ -186,16 +150,6 @@ form{
   left: 50px;
   
 }
-
-/* .reason p{
-  position: absolute;
-  font-family: sans-serif;
-  top: 240px;
-  left: 40px;
-  font-size: 40px;
-  color: white;
-  
-} */
 
 .sub{
   background-image: linear-gradient(90deg, #fdc201, #ff9e06);
