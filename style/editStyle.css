@@ -4,39 +4,47 @@ html, body {
 }
 
 body {
-    display: flex;
+    display: grid;
+    grid-template-areas: 'header header header form form form'
+                            'img img img form form form';
+    overflow: hidden;
+}
+
+header {
+    grid-area: header;
+    width: auto;
+    height: fit-content;
+}
+
+div.office-img{
+    grid-area: img;
+    justify-self: center;
+    align-self: center;
 }
 
 h1{
     font-family: cursive;
     font-weight: bold;
+    font-size: 4em;
     text-transform: uppercase;
     color: white;
     display: block;
     text-align: center;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
 }
 
-div.office-img{
-    justify-content: center;
-    align-items: center;
-    display: inline-block;
-    width: auto;
 
-}
+div.form-container{
+    grid-area: form;
+    background: rgb(3,50,125);
+    background: linear-gradient(0deg, rgba(3,50,125,1) 0%, rgba(0,89,230,1) 100%);
+} 
+
 div.office-img img{
     width: 100%;
     height: auto;
 
 }
-div.form-container{
-    background: rgb(3,50,125);
-    background: linear-gradient(0deg, rgba(3,50,125,1) 0%, rgba(0,89,230,1) 100%);
-    display: inline-block;
-    width: auto;
-
-}
-
 .form-group{
     display: inline-flex;
     margin: 1em;
@@ -65,6 +73,11 @@ select {
 
 }
 
+input[type="date"],
+select{
+    color: #9dcce7;
+}
+
 *::placeholder{
     color: #9dcce7;
 }
@@ -90,6 +103,7 @@ select {
 svg{
     position: absolute;
     bottom: 0;
+    height: auto;
 }
 
 

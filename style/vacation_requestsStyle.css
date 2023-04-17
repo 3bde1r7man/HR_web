@@ -3,18 +3,13 @@ h1{
   font-size: 75px;
   text-align: center;
   font-family: Hey Comic;
-  position: absolute;
-  top: 15px;
-  left: 427px;
   z-index: 3;
-  cursor: normal;
 }
 
 table{
   position: absolute;
-  z-index: 2;
   left: 50%;
-  top: 52%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 60%;
   border-collapse: collapse;
