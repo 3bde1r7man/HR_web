@@ -27,38 +27,39 @@
 
   <body>
     <div class="backgr"> <h1> Vacation Form </h1> </div>
+   
     <form onsubmit=s()>
       
         <div class="idd">
-          <p >ID</p>
-          <input type="text" id="emp-ID"class ="eid" required name="id" disabled placeholder="id" >
+          
+          <input type="text" id="emp-ID"class ="eid" required name="id" disabled placeholder="ID" >
         </div>
     
       <br>
     
         <div class="empname">
-          <p>Name </p>
-          <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="name">
+          
+          <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="Name">
         </div>
            
       <br>
     
         <div class="fDate">
-          <p>From </p>
+         
           <input type="text" id="from-Date" class="fD" onfocus="(this.type = 'date')" required name="from date" placeholder="From Date">
         </div>
     
       <br>
     
         <div class="tDate">
-          <p>To </p>
+          
           <input type="text" id="to-Date" class="tD" onfocus="(this.type = 'date')" required name="to date" placeholder="To Date">    
         </div>
       
         <div class="reason">
         
-          <p>Reason</p><br>
-        <textarea name="subject" id="Reason" class="rs" cols="30" rows="5" required placeholder="enter the reason"></textarea>
+          
+        <textarea name="subject" id="Reason" class="rs" cols="30" rows="5" maxlength="50" required placeholder="Enter The Reason"></textarea>
         </div>
     
       <br>  <br>
