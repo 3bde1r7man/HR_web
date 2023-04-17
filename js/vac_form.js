@@ -8,7 +8,7 @@ function s(){
   const toDate=document.getElementById("to-Date").value;
   const reason=document.getElementById("Reason").value;
   const status="submitted";
-  obj.vacations = {"to-Date":toDate, "Reason":reason , "status":status};
+  obj.vacations = {"to-Date":toDate, "From-Date":fromDate, "Reason":reason , "status":status};
 
   localStorage.setItem("employees",JSON.stringify(employees)); 
 };
