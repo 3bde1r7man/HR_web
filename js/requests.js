@@ -1,68 +1,51 @@
-function getAllSubmittedVacations() {
-    let submittedVacations = [];
-    for (let i = 0; i < localStorage.length; i++) {
-      let key = localStorage.key(i);
-      if(key !== "currEmp" && key !== "id"){
-        const obj = JSON.parse(localStorage.getItem(key));
-        if (obj["status"] === "submitted") {
-          obj["userid"] = key;
-          submittedVacations.push(obj);
-        }
-      }
-    }
-    return submittedVacations;
-  }
-  
-  function SubmittedVacationsTable() {
-    const table = document.getElementById('vacations-table');
-    const submittedVacations = getAllSubmittedVacations().reverse();
-    
-    for (let i = 0; i < submittedVacations.length; i++) {
+function SubmittedVacationsTable() {
+  const table = document.getElementById('vacations-table');
+  let employees = JSON.parse(localStorage.getItem("employees"));
+
+  for (const id in employees) {
+    const obj = employees[id];
+    const vac = obj['vacations'];
+    if (vac && vac['status'] === "submitted") {
       const row = table.insertRow();
-      const id = row.insertCell(0);
+      const ID = row.insertCell(0);
       const name = row.insertCell(1);
       const fromDate = row.insertCell(2);
       const toDate = row.insertCell(3);
       const reason = row.insertCell(4);
       const status = row.insertCell(5);
       const action = row.insertCell(6);
-      
-      id.innerHTML = submittedVacations[i]['userid'];
-      name.innerHTML = submittedVacations[i]['firstName'] + ' ' + submittedVacations[i]['lastName'];
-      fromDate.innerHTML = submittedVacations[i]['from-Date'];
-      toDate.innerHTML = submittedVacations[i]['to-Date'];
-      reason.innerHTML = submittedVacations[i]['Reason'];
-      status.innerHTML = submittedVacations[i]['status'];
-      action.innerHTML = '<button class="button1" onclick="approveVacation(\'' + submittedVacations[i]['userid'] + '\')">Approve</button><button class="button2" onclick="rejectVacation(\'' + submittedVacations[i]['userid'] + '\')">Reject</button>';
+
+      ID.innerHTML = id;
+      name.innerHTML = obj['firstName'] + ' ' + obj['lastName'];
+      fromDate.innerHTML = vac['from-Date'];
+      toDate.innerHTML = vac['to-Date'];
+      reason.innerHTML = vac['Reason'];
+      status.innerHTML = vac['status'];
+      action.innerHTML = '<button class="button1" onclick="approveVacation(\'' + id + '\')">Approve</button><button class="button2" onclick="rejectVacation(\'' + id + '\')">Reject</button>';
     }
   }
-  
+}
 
-  function approveVacation(id) {
-    let data = localStorage.getItem(id);
-    let obj = JSON.parse(data);
-    obj["status"] = 'approved';
-    obj["vacationNum"]++;
-    obj["ApprovedVactions"]--;
-    delete obj["from-Date"];
-    delete obj["to-Date"];
-    delete obj["status"];
-    localStorage.setItem(id, JSON.stringify(obj));
-    location.reload(); 
-  }
-  
-  function rejectVacation(id) {
-    let data = localStorage.getItem(id);
-    let obj = JSON.parse(data);
-    obj["status"] = 'rejected';
-    delete obj["from-Date"];
-    delete obj["to-Date"];
-    delete obj["status"];
-    localStorage.setItem(id, JSON.stringify(obj));
-    location.reload(); 
-  }
-  
-  window.onload = function() {
-    SubmittedVacationsTable();
-    
-  };
+function approveVacation(id) {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const obj = employees[id];
+  obj['vacations']['status'] = 'approved';
+  obj["vacationNum"]--;
+  obj["ApprovedVactions"]++;
+  delete obj['vacations'];
+  localStorage.setItem("employees", JSON.stringify(employees));
+  location.reload();
+}
+
+function rejectVacation(id) {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const obj = employees[id];
+  obj['vacations']['status'] = 'rejected';
+  delete obj['vacations'];
+  localStorage.setItem("employees", JSON.stringify(employees));
+  location.reload();
+}
+
+window.onload = function() {
+  SubmittedVacationsTable();
+};
