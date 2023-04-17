@@ -29,7 +29,7 @@ function del() {
     delete employees[employee.userid]
     localStorage.setItem("employees", JSON.stringify(employees));
     // redirect to the employee list page
-    window.location.replace("/search.html");
+    window.location.replace("search.html");
   }
 }
 // end of delete data
