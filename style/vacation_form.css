@@ -32,7 +32,7 @@ form{
   position: absolute;
   top: 30px;
   left: 150px;
-  width: 350px;
+  width: 300px;
   height: 60px;
   border-radius: 10px;
   border: #ffffff;
@@ -65,7 +65,7 @@ form{
   position: absolute;
   top:30px;
   right: 45px;
-  width: 350px;
+  width: 300px;
   height: 60px;
   border-radius: 10px;
   border: #ffffff;
@@ -88,7 +88,7 @@ form{
   position: absolute;
   font-family: sans-serif;
   top: 10px;
-  right: 520px;
+  right: 465px;
   font-size: 40px;
   color: white;
 }
@@ -97,7 +97,7 @@ form{
   position: absolute;
   top:160px;
   left: 150px;
-  width: 350px;
+  width: 300px;
   height: 60px;
   border-radius: 10px;
   border: #ffffff;
@@ -131,7 +131,7 @@ form{
   position: absolute;
   top:160px;
   right: 45px;
-  width: 350px;
+  width: 300px;
   height: 60px;
   border-radius: 10px;
   border: #ffffff;
@@ -155,7 +155,7 @@ form{
   position: absolute;
   font-family: sans-serif;
   top: 130px;
-  right: 580px;
+  right: 530px;
   font-size: 40px;
   color: white;
 }
