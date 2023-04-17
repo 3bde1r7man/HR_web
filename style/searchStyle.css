@@ -52,6 +52,7 @@ button a{
 .search-bar input[type="text"] {
     border: none;
     margin-left: 25%;
+    margin-top: 25px;
     font-size: 20px;
     width: 50%;
     height: 50px;
