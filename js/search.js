@@ -31,14 +31,12 @@ for(let empId in employees) {
         submit.empID = empId;
         edit.empID = empId;
         submit.onclick = function() {
-            console.log(emp.vacationNum);
             if(emp.vacationNum > 0) {
                 submitCheck.href = "../html/vacation_form.html"
                 localStorage.setItem("currentEmp", this.empID);
             } else {
                 alert("You can't Submit a vacation");
             }
-            
         }
         edit.onclick = function() {
             localStorage.setItem("currentEmp", this.empID);
