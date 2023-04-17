@@ -23,11 +23,6 @@ div.form-container{
     grid-area: form;
     background: rgb(3,50,125);
     background: linear-gradient(0deg, rgba(3,50,125,1) 0%, rgba(0,89,230,1) 100%);
-    display: grid;
-    grid-template-areas: 'h1 h1 h1 h1 h1 h1'
-                        'form form form form form form'
-                        'wave wave wave wave wave wave';
-    z-index: -1;
 } 
 
 div.office-img img{
@@ -44,13 +39,10 @@ h1{
     display: block;
     text-align: center;
     margin: 10%;
-    grid-area: h1;
 }
 
 form{
-    margin-left: 1em;
-    grid-area: form;
-    z-index: 1;
+    margin-left: 2em;
 }
 
 .form-group{
@@ -112,9 +104,7 @@ select{
     bottom:-260px;
     right:-150px;
     width: 62%;
-    height: auto;
-    grid-area: wave;
-    z-index: 0;
+    height: 50%;
 }
 
 
