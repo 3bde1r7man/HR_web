@@ -1,11 +1,12 @@
 const usersTmp = document.querySelector("[users-template]");
 const table = document.querySelector("[table]");
 const searchInput = document.querySelector("[searchInput]");
-let employees = [];
+const employees = JSON.parse(localStorage.getItem("employees"));
+let employeesRows = [];
 
 searchInput.addEventListener("input", e => {
     const value = e.target.value;
-    employees.forEach(employee => {
+    employeesRows.forEach(employee => {
         if(employee.name.toUpperCase().includes(value.toUpperCase())) {
             employee.element.style.display = "";
         } else {
@@ -13,22 +14,21 @@ searchInput.addEventListener("input", e => {
         }
         
     });
-    
 })
 
-for(var i = 1; i < localStorage.length ; i++) {
+
+for(let empId in employees) {
+    let emp = employees[empId];
     const userRow = usersTmp.content.cloneNode(true).children[0]
     const name = userRow.querySelector("[user-name]")
     const submit = userRow.querySelector("[submit-vac]")
     const edit = userRow.querySelector("[edit-user]")
-    var employee = JSON.parse(window.localStorage.getItem(i.toString()));
-    if(employee != null) {
-        
-        var firstName = employee.firstName;
-        var lastName = employee.lastName;
+    if(emp != null) {
+        var firstName = emp.firstName;
+        var lastName = emp.lastName;
         name.textContent = firstName + " " + lastName;
-        submit.empID = i;
-        edit.empID = i;
+        submit.empID = empId;
+        edit.empID = empId;
         submit.onclick = function() {
             localStorage.setItem("currentEmp", this.empID);
         }
@@ -36,6 +36,6 @@ for(var i = 1; i < localStorage.length ; i++) {
             localStorage.setItem("currentEmp", this.empID);
         }
         table.appendChild(userRow)
-        employees.push({name: name.textContent, element: userRow});
+        employeesRows.push({name: name.textContent, element: userRow});
     }
 }
