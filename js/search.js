@@ -23,6 +23,7 @@ for(let empId in employees) {
     const name = userRow.querySelector("[user-name]")
     const submit = userRow.querySelector("[submit-vac]")
     const edit = userRow.querySelector("[edit-user]")
+    const submitCheck = userRow.querySelector("[submitCheck]")
     if(emp != null) {
         var firstName = emp.firstName;
         var lastName = emp.lastName;
@@ -30,7 +31,14 @@ for(let empId in employees) {
         submit.empID = empId;
         edit.empID = empId;
         submit.onclick = function() {
-            localStorage.setItem("currentEmp", this.empID);
+            console.log(emp.vacationNum);
+            if(emp.vacationNum > 0) {
+                submitCheck.href = "../html/vacation_form.html"
+                localStorage.setItem("currentEmp", this.empID);
+            } else {
+                alert("You can't Submit a vacation");
+            }
+            
         }
         edit.onclick = function() {
             localStorage.setItem("currentEmp", this.empID);
