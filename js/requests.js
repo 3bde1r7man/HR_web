@@ -17,7 +17,7 @@ function SubmittedVacationsTable() {
 
       ID.innerHTML = id;
       name.innerHTML = obj['firstName'] + ' ' + obj['lastName'];
-      fromDate.innerHTML = vac['from-Date'];
+      fromDate.innerHTML = vac['From-Date'];
       toDate.innerHTML = vac['to-Date'];
       reason.innerHTML = vac['Reason'];
       status.innerHTML = vac['status'];
