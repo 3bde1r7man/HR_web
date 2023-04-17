@@ -2,78 +2,77 @@
 <html>
 
   <head>
-    
-        <nav>
-          <div class="nav">
-              <a href="home_page.html" style="color: white;">
-                  Home Page
-              </a> 
-              <a href="add1.html" style="color: white;">
-                  Add Employee
-              </a>
-              <a href="search.html" class="active" style="color: white;">
-                  Search For Employee
-              </a>
-              <a href="vacation_requsets.html" style="color: white;">
-                  Submitted Vacations
-              </a>
-          </div>
-  </nav>  
+    <nav >
+      <div class="nav" style="background-color:#005bea; height: 90px;; margin-left:-10px; margin-top: -9px; margin-right: -10px; ">
+        
+        <a href="home_page.html" style="color: white;">
+          Home Page
+        </a>
+        <a href="add1.html" style="color: white;">
+          Add Employee
+        </a>
+        <a href="search.html" style="color: white;">
+          Search For Employee
+        </a>
+        <a href="vacation_requsets.html" style="color: white;">
+          Submitted Vacations
+        </a>
+      </div>
+    </nav>
+ 
   <link rel =" stylesheet" href="../style/vacation_form.css">
   <link rel =" stylesheet" href="../style/navStyle.css">
-  
+  <title> Vacation Form </title>
 </head>
 
   <body>
     <div class="backgr"> <h1> Vacation Form </h1> </div>
-    <form>
-    
+   
+    <form onsubmit=s()>
       
         <div class="idd">
-          <p >ID</p>
-          <input type="text" class ="eid" required name="id" disabled placeholder="2021">
+          
+          <input type="text" id="emp-ID"class ="eid" required name="id" disabled placeholder="ID" >
         </div>
     
-        <br>
+      <br>
     
         <div class="empname">
-          <p>Name </p>
-          <input type="text" class ="en" required name="Employee name" disabled placeholder="shahd">
+          
+          <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="Name">
+        </div>
+           
+      <br>
     
+        <div class="fDate">
+         
+          <input type="text" id="from-Date" class="fD" onfocus="(this.type = 'date')" required name="from date" placeholder="From Date">
         </div>
     
-        
-    <br>
+      <br>
     
-          <div class="fDate">
-            <p>From </p>
-            <input type="text" class="fD" onfocus="(this.type = 'date')" required name="from date" placeholder="From Date">
-    
-          </div>
-    
-    <br>
-    
-          <div class="tDate">
-            <p>To </p>
-            <input type="text" class="tD" onfocus="(this.type = 'date')" required name="to date" placeholder="To Date">
-    
-          </div>
+        <div class="tDate">
+          
+          <input type="text" id="to-Date" class="tD" onfocus="(this.type = 'date')" required name="to date" placeholder="To Date">    
+        </div>
       
-    <div class="reason">
-      <p>Reason</p><br>
-      <textarea name="subject" class="rs" cols="30" rows="5" placeholder="enter the reason"></textarea>
+        <div class="reason">
+        
+          
+        <textarea name="subject" id="Reason" class="rs" cols="30" rows="5" maxlength="50" required placeholder="Enter The Reason"></textarea>
+        </div>
     
-    </div>
+      <br>  <br>
+      
+      <input type="submit" value="Submit" class="sub" >
     
-    <br>
-    <br>
-          <input type="submit" value="Submit" class="sub">
-      </form>
+    </form>
         
     <img src="../shapes/shape2.png" class="sh2" alt="shape">
     <img src="../shapes/shape1_right.png" class="sh1_r" alt="shape">
     <img src="../shapes/shape1_left.png" class="sh1_l" alt="shape">
   
+    <script src="../js/vac_form.js"> </script>
   </body>
   
 </html>
