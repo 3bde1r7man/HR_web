@@ -69,4 +69,5 @@ function JS2() {
   employee.salary = document.getElementById("salary").value;
   employee.date = document.getElementById("date").value;
   localStorage.setItem("employees",JSON.stringify(employees));
+  alert("Employee added Successfully");
 }
