@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,26 +16,20 @@
     href="https://fonts.googleapis.com/css2?family=Norican&display=swap"
     rel="stylesheet"
     />
-    <link rel="stylesheet" href="../style/editStyle.css" />
-    <link rel="stylesheet" href="../style/navStyle.css" />
+    <link rel="stylesheet" href="{% static 'style/editStyle.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/navStyle.css' %}" />
   </head>
   <header>
-    <nav>
-      <div class="nav">
-        <a href="home_page.html"> Home Page </a>
-        <a href="add1.html"> Add Employee </a>
-        <a href="search.html"> Search For Employee </a>
-        <a href="vacation_requsets.html"> Submitted Vacations </a>
-      </div>
-    </nav>
+    {% include 'partials/_header2.html' %}
   </header>
   <body>
     <div class="office-img">
-      <img src="../shapes/edit.jpg" alt="officeimg" />
+      <img src="{% static 'shapes/edit.jpg' %}" alt="officeimg" />
     </div>
     <div class="form-container">
       <h1>Edit Employee</h1>
-      <form action="search.html" method="POST">
+      <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
         <div class="form-group">
           <i class="fa fa-lock" style="font-size: 1.5em"></i>
           <input
@@ -177,8 +172,8 @@
           <button onclick="del()" class="button">Delete</button>
         </div>
       </form>
-      <img src="../shapes/shapes.png" class="wave">
+      <img src="{% static 'shapes/shapes.png' %}" class="wave">
     </div>
   </body>
-  <script src="../js/edit.js"></script>
+  <script src="{% static 'js/edit.js' %}"></script>
 </html>

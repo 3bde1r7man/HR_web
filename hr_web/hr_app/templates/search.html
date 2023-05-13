@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search</title>
+        <script src="{% static 'js/search.js' %}" defer> </script>
+        <link rel="stylesheet" href="{% static 'style/navStyle.css' %}">
+        <link rel="stylesheet" href="{% static 'style/searchStyle.css' %}">
+    </head>
+    <body>
+        {% include 'partials/_header.html' %}
+        <div class="search-bar">
+			<input type= "text" class="place" placeholder="Employee Name" searchInput>
+        </div>
+        <table style="border: 1px;" table>
+            <tr>
+                <th> Name </th>
+                <th> Submit Vacation </th>
+                <th> Edit Data </th>
+            </tr>
+            <template users-template>
+                <tr>
+                    <td user-name></td>
+                    <td> 
+                        <button class="button1" submit-vac><a href="" submitCheck> Submit form </a></button>
+                    </td>
+                    <td>
+                        <button class="button2" edit-user><a href="{% url 'edit' %}"> Edit data </a> </button> 
+                    </td>
+                </tr>
+            </template> 
+        </table>
+        
+    </body>
+    <img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape" >
+</html>
