@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hr_app.apps.MyappConfig',
+    'hr_app.apps.HrAppConfig',
 ]
 
 MIDDLEWARE = [
