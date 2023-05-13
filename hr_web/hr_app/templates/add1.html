@@ -17,6 +17,7 @@
     <body>
         {% include 'partials/_header2.html' %}
         <form action="{% url 'add2' %}">
+            {% csrf_token %}
             <div>
                 <h1>welcome !</h1>
             </div>
@@ -24,27 +25,23 @@
             <div class ="f"></div>
             <div class="a">
                 <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                <input type="text" id="firstname" class="x" placeholder="First name" required/>
-        
+                {{form.first_name}}
             </div>
             <div class="b">
                 <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                <input type="text" id="lastname" class="x1" placeholder="Last name" required/>
-        
+                {{form.last_name}}        
             </div>
             <div class="c">
                 <i class="fa fa-envelope" style="font-size: 1.5em;"></i>
-                <input type="email" class="x2" id="email" placeholder="Your e-mail"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
-        
+                {{form.email}}        
             </div>
             <div class="d">
                 <i class="fa fa-lock" style="font-size: 1.5em;"></i>
-                <input type="number" class="x3" id="userid" placeholder="User id" min = "1" max = "2000" required/>
-        
+                {{form.emp_id}}        
             </div>
             <div class="e">
                 <i class="fa fa-map-marker" style="font-size: 1.5em;"></i>
-                <input type="text" class="x4" id="address" placeholder="address"  minlength = "10" maxlength = "50" required/>
+                {{form.address}}
             </div>
             <button type="submit" onclick="JS()" id="insert" class="button">Continue</button>
         </form>
