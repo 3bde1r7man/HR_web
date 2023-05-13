@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../style/projectStyle.css">
+        <link rel="stylesheet" href="{% static 'style/projectStyle.css' %}">
         <title>Projects</title>
     </head>
     <body>
         <div>
-            <a href="home_page.html"> Human Resources </a>
+            <a href="{% url 'home' %}"> Human Resources </a>
         </div>
         <div>
             <a href="">Student Affairs</a>
@@ -18,6 +19,6 @@
             <a href="">Laboratory tracking</a>
         </div>
     </body>
-    <img src="../shapes/shape_left.png" id="s1">
-    <img src="../shapes/shape_right.png" id="s2">
+    <img src="{% static 'shapes/shape_left.png' %}" id="s1">
+    <img src="{% static 'shapes/shape_right.png' %}" id="s2">
 </html>

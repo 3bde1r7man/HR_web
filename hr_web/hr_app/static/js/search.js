@@ -32,7 +32,7 @@ for(let empId in employees) {
         edit.empID = empId;
         submit.onclick = function() {
             if(emp.vacationNum > 0) {
-                submitCheck.href = "../html/vacation_form.html"
+                submitCheck.href = "{% url 'form' %}"
                 localStorage.setItem("currentEmp", this.empID);
             } else {
                 alert("You can't Submit a vacation");

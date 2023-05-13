@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet" href="{% static 'style/style.css' %}">
+        <link rel = "stylesheet" href="{% static 'style/navStyle.css' %}">
+        <title>Home Page</title>
+    </head>
+    <body>
+        {% include 'partials/_header.html' %}
+        <div class="welcome">
+            <h1>Welcome to Human Resources Website this is the Home Page</h1>
+            <h2>Here is the available functionalities in this website</h2>
+        </div>
+        <div>
+            <ul>
+                <li>Add a new employee</li>
+                <li>Edit or Delete existing employee data</li>
+                <li>Search for an employee</li>
+                <li>Submit vacation</li>
+                <li>View submited vacations</li>
+            </ul>
+        <div>
+        <img src="{% static 'shapes/shape5.png' %}" class="i" alt="shape" >
+        <img src="{% static 'shapes/shape2.png' %}" class="i1" alt="shape">
+    </body>
+</html>
