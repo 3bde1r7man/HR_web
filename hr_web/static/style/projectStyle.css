@@ -1,0 +1,49 @@
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+div {
+    margin-top: 20px;
+    text-align: center;
+    height: 25%;
+    width: 100%;
+    
+}
+div a{
+    padding: 14px 16px;
+    margin-top: 50px;
+    height: 25%;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+    text-decoration: none;
+}
+
+
+
+a:hover {
+    height: fit-content;
+    background-color: rgba(35, 0, 235, 0.3);
+}
+
+#s1{
+    height: auto;
+    top: -32px;
+    right: -450px;
+    position: absolute;
+    width: 75%;
+
+}
+#s2{
+    height: auto;
+    top: -32px;
+    left: -390px;
+    position: absolute;
+    width: 75%;
+}

@@ -1,0 +1,146 @@
+* {
+    font-family: Liberation Sans ;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+button a{
+    color: white;
+    border-radius: 50px;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {
+    padding-left: 20px;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+}
+.button1 a{
+    color: #0c3981;
+}
+
+.button2 {
+    padding-left: 20px;
+    background: linear-gradient(to bottom, #0059e6, #03327d);
+}
+
+.button2 a{
+    font-weight: bold;
+
+}
+
+
+
+.search-bar {
+    margin-top: 20px;
+    width: 100%;
+    padding: 5px;
+    
+}
+
+.search-bar ::placeholder{
+    font-size: 20px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    margin-left: 25%;
+    margin-top: 25px;
+    font-size: 20px;
+    width: 50%;
+    height: 50px;
+    border-radius: 30px;
+    text-indent: 5px;
+    padding: 5px;
+}
+
+
+
+
+html, body {
+    height: 100%;
+}
+
+
+h1{
+    color: #ffffff;
+    font-size: 75px;
+    text-align: center;
+    font-family: Hey Comic;
+    position: absolute;
+    top: 15px;
+    left: 427px;
+    z-index: 3;
+    cursor: normal;
+}
+
+table{
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(32, 32, 32, .3);
+    background: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+}
+th{
+    height: 1em;
+}
+th,td{
+    padding: 10px 15px;
+}
+
+th {
+    background-color: #0059e6;
+    color: #ffffff;
+    text-align: center;
+    font-family: Liberation Sans;
+}
+
+
+.button1 {
+    color: #03327d;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+.button2 {
+    color: #ffffff;
+    background-image: linear-gradient(90deg, #03327d, #0059e6);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+
+}
+
+.i{
+    position: absolute;     
+    top :-460px;
+    width: 100%;
+    right: 0px;
+    left: 0px;
+    height: auto;
+    padding: 0%;
+    margin: 0%;
+    z-index: -20000; 
+}

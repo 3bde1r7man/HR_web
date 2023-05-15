@@ -28,148 +28,56 @@
     </div>
     <div class="form-container">
       <h1>Edit Employee</h1>
-      <form action="{% url 'search' %}" method="POST">
+      <form method="" action="{% url 'edit' pk=employee.emp_id %}">
         {% csrf_token %}
         <div class="form-group">
-          <i class="fa fa-lock" style="font-size: 1.5em"></i>
-          <input
-            type="number"
-            class="form-control"
-            name="userid"
-            placeholder="User ID"
-            min="1"
-            max="2000"
-            required
-            disabled
-          />
+          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
+          {{form.first_name}}
         </div>
         <div class="form-group">
           <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-          <input
-          type="text"
-          class="form-control"
-          name="firstName"
-            placeholder="First name"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-          <input
-            type="text"
-            class="form-control"
-            name="lastName"
-            placeholder="Last name"
-            required
-          />
+          {{form.last_name}}
         </div>
         <div class="form-group">
           <i class="fa fa-envelope" style="font-size: 1.5em"></i>
-          <input
-            type="email"
-            class="form-control"
-            name="email"
-            placeholder="Your e-mail"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-            required
-          />
+          {{form.email}}
         </div>
         <div class="form-group">
           <i class="fa fa-map-marker" style="font-size: 1.5em"></i>
-          <input
-            type="text"
-            class="form-control"
-            name="address"
-            placeholder="Address"
-            minlength="10"
-            maxlength="50"
-            required
-          />
+          {{form.address}}
         </div>
         <div class="form-group">
           <i class="fa fa-phone" style="font-size: 1.5em"></i>
-          <input
-            type="text"
-            class="form-control"
-            name="phoneNum"
-            placeholder="Phone number"
-            pattern="^01[0-2]\d{1,8}$"
-            minlength="11"
-            maxlength="11"
-            required
-          />
+          {{form.phone_number}}
         </div>
         <div class="form-group">
           <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-          <input
-            type="number"
-            class="form-control"
-            name="vacationNum"
-            placeholder="Vacation days"
-            min="1"
-            max="10"
-            required
-          />
+          {{form.vacation_number}}
         </div>
         <div class="form-group">
           <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-          <input
-            type="number"
-            class="form-control"
-            name="ApprovedVactions"
-            placeholder="Approved Vacation days"
-            min="0"
-            required
-          />
+          {{form.approved_vacation_number}}
           <span id="error-message" style="display: block; color: grey"></span>
         </div>
         <div class="form-group">
           <i class="fa fa-dollar" style="font-size: 1.5em"></i>
-          <input
-            type="number"
-            class="form-control"
-            name="salary"
-            placeholder="Salary"
-            min="2000"
-            max="6000"
-            required
-          />
+          {{form.salary}}
         </div>
         <div class="form-group">
           <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-          <input
-            type="Date"
-            class="form-control"
-            name="date"
-            placeholder="Date"
-            min="1990-01-01"
-            max="2005-12-31"
-            required
-          />
+          {{form.date_of_birth}}
         </div>
         <div class="form-group">
           <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-          <select class="form-control" name="gender" required>
-            <option value="" selected disabled>Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+          {{form.gender}}
         </div>
         <div class="form-group">
           <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-          <select class="form-control" name="materialStatus" required>
-            <option value="" selected disabled>Marital Status</option>
-            <option value="single">Single</option>
-            <option value="married">Married</option>
-            <option value="widowed">widowed</option>
-            <option value="divorced">divorced</option>
-            <option value="separated">separated</option>
-            <option value="other">other</option>
-          </select>
+          {{form.matrial_status}}
         </div>
         <div class="form-group button-container">
-          <button type="submit" class="button">Save</button>
-          <button onclick="del()" class="button">Delete</button>
+          <button onclick="setMethod('POST')" class="button">Save</button>
+          <button onclick="setMethod('DELETE')" class="button">Delete</button>
         </div>
       </form>
       <img src="{% static 'shapes/shapes.png' %}" class="wave">

@@ -27,22 +27,25 @@ class Employee(models.Model):
     salary = models.IntegerField(validators=[MinValueValidator(2000,message="Value must be greater than or equal to 2000."),
                                              MaxValueValidator(6000,message="Value must be less than or equal to 6000.")])
     date_of_birth = models.DateField()
-    vacation_number = models.IntegerField(validators=[  MinValueValidator(1,message="Value must be greater than or equal to 1."),
+    vacation_number = models.IntegerField(default=1,validators=[  MinValueValidator(1,message="Value must be greater than or equal to 1."),
                                                         MaxValueValidator(10,message="Value must be less than or equal to 10.")])
-    aprroved_vacation_number = models.IntegerField(validators=[ MinValueValidator(1,message="Value must be greater than or equal to 1."),
+    approved_vacation_number = models.IntegerField(default=0,validators=[ MinValueValidator(0,message="Value must be greater than or equal to 0."),
                                                                 MaxValueValidator(10,message="Value must be less than or equal to 10.")])
     
-    def clean(self):
-        pattern = r'^(\+2)?01(0|1|2)\d{8}$'
-        if not re.match(pattern, self.phone_number):
-            raise ValidationError(
-                f'{self.phone_number} is not a valid phone number',
-                params={'value': self.phone_number},
-            )
-        if self.date_of_birth.year < date.today().year- 21:
-            raise ValidationError(
-                f'Employee must be older than 21 years old',
-            )
+    def clean_fields(self,exclude=None):
+        super().clean_fields(exclude=exclude)
+        if "date_of_birth" not in exclude:
+            if date.today().year - self.date_of_birth.year  <  21 :
+                raise ValidationError(
+                    f'Employee must be older than 21 years old',
+                )
+        if "phone_number" not in exclude:
+            pattern = r'^(\+2)?01(0|1|2)\d{8}$'
+            if not re.match(pattern, self.phone_number):
+                raise ValidationError(
+                    f'{self.phone_number} is not a valid phone number',
+                    params={'value': self.phone_number},
+                )
 
 class Vacation(models.Model):
     STATUS_CHOICES = (

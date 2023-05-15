@@ -18,38 +18,46 @@
         </div>
         
         <div class ="f"></div>
-        <form action="{% url 'search' %}">
+        <form method="POST">
+            {% csrf_token %}
             <div class = "k">
                 <div class="a">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
                     {{form.matrial_status}}
+                    {{form.matrial_status.errors}}
             
                 </div>
                 <div class="b">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
                     {{form.gender}}
+                    {{form.gender.errors}}
                 </div>
                 <div class="c">
                     <i class="fa fa-phone"style="font-size: 1.5em;"></i>
                     {{form.phone_number}}
+                    {{form.phone_number.errors}}
                 </div>
                 <div class="d">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="vacationNum" class="x3" placeholder="Vacation days number" min = "1" max="10" required/>
-            
+                    {{form.vacation_number}}            
+                    {{form.vacation_number.errors}}            
                 </div>
                 <div class="e">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="ApprovedVactions" class="x4" placeholder="Approved vacation days" min = "0" required/>
+                    {{form.approved_vacation_number}}
+                    {{form.approved_vacation_number.errors}}
                 </div>
                 <div class="g">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="Date" id="date" class="x5" placeholder="Date Of Birth"  min="1990-01-01" max="2005-12-31" required/>
+                    {{form.date_of_birth}}
+                    {{form.date_of_birth.errors}}
                 </div>
                 <div class="h">
                     <i class="fa fa-dollar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="salary" class="x6  " placeholder="Salary" min = "2000" max= "6000" required/>
+                    {{form.salary}}
+                    {{form.salary.errors}}
                 </div>
+                {{form.non_field_errors}}
             </div>
             <button type="submit" onclick="JS2()" class="button">Creat account</button>
         </form>

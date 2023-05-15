@@ -16,7 +16,7 @@
     </head>
     <body>
         {% include 'partials/_header2.html' %}
-        <form action="{% url 'add2' %}">
+        <form method="POST">
             {% csrf_token %}
             <div>
                 <h1>welcome !</h1>
@@ -26,24 +26,30 @@
             <div class="a">
                 <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
                 {{form.first_name}}
+                {{form.first_name.errors}}
             </div>
             <div class="b">
                 <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                {{form.last_name}}        
+                {{form.last_name}}    
+                {{form.last_name.errors}}    
             </div>
             <div class="c">
                 <i class="fa fa-envelope" style="font-size: 1.5em;"></i>
-                {{form.email}}        
+                {{form.email}}   
+                {{form.email.errors}}     
             </div>
             <div class="d">
                 <i class="fa fa-lock" style="font-size: 1.5em;"></i>
-                {{form.emp_id}}        
+                {{form.emp_id}}  
+                {{form.emp_id.errors}}
             </div>
             <div class="e">
                 <i class="fa fa-map-marker" style="font-size: 1.5em;"></i>
                 {{form.address}}
+                {{form.address.errors}}
             </div>
-            <button type="submit" onclick="JS()" id="insert" class="button">Continue</button>
+            {{form.non_field_errors}}
+            <button type="submit"  id="insert" class="button">Continue</button>
         </form>
         <img src="{% static 'shapes/shape1.png' %}" class="i" alt="shape" >
         <img src="{% static 'shapes/shape1.png' %}" class="i1" alt="shape">

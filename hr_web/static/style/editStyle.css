@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 'header header header form form form'
+                            'img img img form form form';
+    overflow: hidden;
+}
+
+header {
+    grid-area: header;
+    height: fit-content;
+}
+
+div.office-img{
+    grid-area: img;
+}
+
+div.form-container{
+    grid-area: form;
+    background: rgb(3,50,125);
+    background: linear-gradient(0deg, rgba(3,50,125,1) 0%, rgba(0,89,230,1) 100%);
+} 
+
+div.office-img img{
+    width: 100%;
+    height: auto;
+}
+A
+h1{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: 5em;
+    text-transform: uppercase;
+    color: white;
+    display: block;
+    text-align: center;
+    margin: 10%;
+}
+
+form{
+    margin-left: 2em;
+}
+
+.form-group{
+    display: inline-flex;
+    margin: 1em 1em 1em 2em ;
+    width: 15em;
+}
+
+i{
+    position: absolute;
+    padding: 1em;
+    color: #9dcce7;
+    justify-self: center;
+    align-self: center;
+}
+
+input,
+select {
+    padding: 1em;
+    border-radius: 10px;
+    margin-left: 1em;
+    font-family: "Liberation Sans", sans-serif;
+    padding-left: 3em;
+    border: none;
+    outline: none;
+    width: 30em;
+
+}
+
+input[type="date"],
+select{
+    color: #9dcce7;
+}
+
+*::placeholder{
+    color: #9dcce7;
+}
+
+.button-container{
+    display: block;
+    width: auto;
+}
+.button {
+    display: inline-block;
+    color: #033480;
+    margin: 4%;
+    width: 40%;
+    padding: 0.5% 1%;
+    border: none;
+    border-radius: 50px;
+    background-image: linear-gradient(90deg, #fdc201, #ff9e06);
+    cursor: pointer;
+    font-size: 35px;
+
+}
+
+.wave{
+    position: absolute;
+    bottom:-260px;
+    right:-150px;
+    width: 62%;
+    height: 50%;
+}
+
+
+
+@media (max-width: 1000px) {
+    div.office-img {
+        display: none;
+    }
+}

@@ -1,0 +1,43 @@
+.welcome{
+    font-family: Hey Comic;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(to bottom, #0059e6, #03327d);
+    margin: 0;
+    overflow: hidden;
+}
+
+h1, h2 {
+    text-align: center;
+    color: white;
+    margin: 20px 0;
+}
+
+
+li {
+    list-style-type: '- ';
+    color: white;
+    font-size: 25px;
+    font-family: Liberation Sans;
+}
+
+.i{
+    position: absolute;
+    bottom: -327px;
+    width: 115%;
+    left: -45px;
+}
+
+.i1{
+    position: absolute;
+    right: -191px;
+    top: -135px;
+    width: 525px;
+    height: auto;
+    z-index: 9;
+}
