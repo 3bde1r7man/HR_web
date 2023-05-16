@@ -1,66 +1,83 @@
-from django.shortcuts import render, redirect,get_object_or_404
-from django.http import HttpResponse
+from typing import Any, Dict
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
 from .forms import AddEmployee1, AddEmployee2,EditEmployee
 from .models import Employee
-# Create your views here.
-def home(request):
-    return render(request, 'home.html')
+from django.views.generic import UpdateView,TemplateView,FormView,ListView,RedirectView,DeleteView
+from django.db.models import Q
 
-def index(request):
-    return render(request, 'projects.html')
+class HomeView(TemplateView):
+    template_name = 'home.html'
 
-def add(request):
-    if request.method == "POST":
-        form = AddEmployee1(request.POST)
-        if form.is_valid():
-            request.session['employee_data'] = form.cleaned_data
-            return redirect('add2')
-    else:
-        form = AddEmployee1()
-    context = {'form': form}
+class IndexView(TemplateView):
+    template_name = 'projects.html'
 
-    return render(request, 'add1.html',context=context)
+class AddEmployeeView(FormView):
+    form_class = AddEmployee1
+    template_name = 'add1.html'
+    success_url = reverse_lazy("add2")
 
-def add2(request):
-    employee_data = request.session.get('employee_data', {})
-    if not employee_data:
-        return redirect('add')
-    if request.method == "POST":
-        form = AddEmployee2(request.POST)
-        if form.is_valid():
-            employee_data.update(form.cleaned_data)
-            employee = Employee(**employee_data)
-            employee.save()
-            del request.session['employee_data']
-            return redirect('search')
-    else:
-        form = AddEmployee2()
-    context = {'form': form}
+    def form_valid(self, form):
+        self.request.session['employee_data'] = form.cleaned_data
+        return HttpResponseRedirect(self.success_url)
 
-    return render(request, 'add2.html', context=context)
 
-def search(request):
-    return render(request,'search.html')
+class AddEmployee2View(FormView):
+    form_class = AddEmployee2
+    template_name = 'add2.html'
+    success_url = reverse_lazy("search")
 
-def edit(request,pk):
-    employee = get_object_or_404(Employee,pk=pk)
-    if request.method == "POST":
-        print("posting employee")
-        form = EditEmployee(request.POST, instance=employee)
-        if form.is_valid() and request.method.get("emp_id")==employee.emp_id:
-            form.save()
-            return redirect('search')
-    elif request.method == "DELETE":
-        print("deleting employee")
-        employee.delete()
-        return redirect('search')
-    else:
-        form = EditEmployee(instance=employee)
-    context = {'form': form,"employee":employee}
-    return render(request, 'edit.html',context=context)
+    def get(self, request, *args, **kwargs):
+        if 'employee_data' not in self.request.session:
+            return redirect('add1')
+        return super().get(request, *args, **kwargs)
+
+    def form_valid(self, form):
+        employee_data = self.request.session.get('employee_data',{})
+        employee_data.update(form.cleaned_data)
+        employee = Employee(**employee_data)
+        employee.save()
+        del self.request.session['employee_data']
+        return super().form_valid(form)
+
+
+class EmployeeListView(ListView):
+    model = Employee
+    template_name ='search.html'
+    context_object_name = 'employees'
+    
+    def get_queryset(self):
+        query = self.request.GET.get('q','')
+        if query:
+            return Employee.objects.filter(Q(first_name__icontains=query)|Q(last_name__icontains=query))
+        else:
+            return Employee.objects.all()
+
+class UpdateEmployeeView(UpdateView):
+    model = Employee
+    form_class = EditEmployee
+    template_name = 'edit.html'
+    success_url = reverse_lazy('search')
+    
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['pk'] = self.kwargs['pk']
+        return context
 
 def vacation_form(request):
     return render(request, 'vacation_form.html')
 
 def vacation_request(request):
     return render(request, 'vacation_requests.html')
+
+
+class DeleteEmployeeView(DeleteView):
+    model = Employee
+    template_name = 'edit.html'
+    success_url = reverse_lazy('search')
+
+    def post(self, *args, **kwargs):
+        self.object.delete()
+        return HttpResponseRedirect(self.success_url)
+

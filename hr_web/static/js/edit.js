@@ -31,26 +31,23 @@ function del() {
 }
 // end of delete data
 
-function setMethod(method) {
-  var form = document.querySelector('form');
-  if (method === 'DELETE') {
-    fetch(form.action, {
-      method: 'DELETE',
+function del(delete_url) {
+    fetch(delete_url, {
+      method: "DELETE",
       headers: {
-        'X-CSRFToken': form.querySelector('[name=csrfmiddlewaretoken]').value,
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({})
     })
-    .then(response => {
+    .then(function(response) {
       if (response.ok) {
-        alert("Success");
+        console.log("Success");
       } else {
-        alert('Failed to delete employee');
+        console.log("Error");
+        throw new Error("Error: " + response.status);
       }
+    })
+    .catch(function(error) {
+      alert(error);
     });
-  } else {
-    form.method = method;
-    form.submit();
-  }
 }

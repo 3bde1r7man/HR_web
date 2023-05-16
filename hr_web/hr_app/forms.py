@@ -29,7 +29,7 @@ class EditEmployee(forms.ModelForm):
     class Meta:
         model = models.Employee
         fields = "__all__"
+        exclude = ['emp_id']
         widgets = {
-            "emp_id":forms.HiddenInput(),
             "date_of_birth": forms.DateInput(attrs={"placeholder": "Date of birth","type":"date"}),
         }

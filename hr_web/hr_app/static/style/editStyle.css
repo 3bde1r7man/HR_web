@@ -108,7 +108,9 @@ select{
 }
 
 
-
+a.button{
+    text-decoration: none;
+}
 @media (max-width: 1000px) {
     div.office-img {
         display: none;

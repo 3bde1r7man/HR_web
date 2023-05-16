@@ -28,7 +28,7 @@
     </div>
     <div class="form-container">
       <h1>Edit Employee</h1>
-      <form method="" action="{% url 'edit' pk=employee.emp_id %}">
+      <form method="POST">
         {% csrf_token %}
         <div class="form-group">
           <i class="fa fa-user icon" style="font-size: 1.5em"></i>
@@ -76,12 +76,13 @@
           {{form.matrial_status}}
         </div>
         <div class="form-group button-container">
-          <button onclick="setMethod('POST')" class="button">Save</button>
-          <button onclick="setMethod('DELETE')" class="button">Delete</button>
+          <button type="submit" class="button">Save</button>
+          <a onclick="del('{% url 'delete' pk=pk %}')" style="text-align: center;" class="button" href="{%url 'search'%}">Delete</a>
         </div>
       </form>
       <img src="{% static 'shapes/shapes.png' %}" class="wave">
     </div>
   </body>
-  <script src="{% static 'js/edit.js' %}"></script>
+  <script src="{% static 'js/edit.js' %}">
+  </script>
 </html>
