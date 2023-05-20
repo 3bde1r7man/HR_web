@@ -7,8 +7,8 @@
         >
             Home Page
         </a>
-        <a href="{% url 'add' %}" 
-        {% if request.path == '/add/' or request.path == '/add2/' %}
+        <a href="{% url 'add_employee' %}" 
+        {% if request.path == '/add_employee/' or request.path == '/add_employee2/' %}
         class="active"
         {% endif %}
         >

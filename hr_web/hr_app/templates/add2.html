@@ -18,11 +18,12 @@
         </div>
         
         <div class ="f"></div>
-        <form action="{% url 'search' %}">
+        <form method = 'POST' action="{% url 'search' %}">
+            {% csrf_token %}
             <div class = "k">
                 <div class="a">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                <select id="materialStatus" required>
+                <select id="materialStatus" name = "material_status"  required>
                     <option value="" selected disabled>Matrial Status</option>
                     <option value="single">single</option>
                     <option value="married">married</option>
@@ -35,7 +36,7 @@
                 </div>
                 <div class="b">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                <select id="gender" required>
+                <select id="gender" name="gender" required>
                     <option value="" selected disabled>Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -43,24 +44,24 @@
                 </div>
                 <div class="c">
                     <i class="fa fa-phone"style="font-size: 1.5em;"></i>
-                    <input type="text" id="phoneNum" class="x2" placeholder="Phone number" pattern="^01[0-2]\d{1,8}$" minlength="11" maxlength="11" required/>
+                    <input type="text" id="phoneNum" class="x2" placeholder="Phone number" name="phone" pattern="^01[0-2]\d{1,8}$" minlength="11" maxlength="11" required/>
                 </div>
                 <div class="d">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="vacationNum" class="x3" placeholder="Vacation days number" min = "1" max="10" required/>
+                    <input type="number" id="vacationNum" class="x3" placeholder="Vacation days number" name="vcation_days" min = "1" max="10" required/>
             
                 </div>
                 <div class="e">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="ApprovedVactions" class="x4" placeholder="Approved vacation days" min = "0" required/>
+                    <input type="number" id="ApprovedVactions" class="x4" placeholder="Approved vacation days" name="approved_vacation" min = "0" required/>
                 </div>
                 <div class="g">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    <input type="Date" id="date" class="x5" placeholder="Date Of Birth"  min="1990-01-01" max="2005-12-31" required/>
+                    <input type="Date" id="date" class="x5" placeholder="Date Of Birth"  min="1990-01-01" name="date" max="2005-12-31" required/>
                 </div>
                 <div class="h">
                     <i class="fa fa-dollar" style="font-size: 1.5em;"></i>
-                    <input type="number" id="salary" class="x6  " placeholder="Salary" min = "2000" max= "6000" required/>
+                    <input type="number" id="salary" class="x6  " placeholder="Salary" name="salary" min = "2000" max= "6000" required/>
                 </div>
             </div>
             <button type="submit" onclick="JS2()" class="button">Creat account</button>
