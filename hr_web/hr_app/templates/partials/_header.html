@@ -2,29 +2,33 @@
     <div class="nav">
         <a href="{% url 'home' %}" 
         {% if request.path == '/home/' %}
-        class="active" style="color: white;"
+        class="active" 
         {% endif %}
+        style="color: white;"
         >
             Home Page
         </a>
         <a href="{% url 'add' %}" 
         {% if request.path == '/add/' %}
-        class="active" style="color: white;"
+        class="active" 
         {% endif %}
+        style="color: white;"
         >
             Add Employee
         </a>
         <a href="{% url 'search' %}" 
         {% if request.path == '/search/' %}
-        class="active" style="color: white;"
+        class="active" 
         {% endif %}
+        style="color: white;"
         >
             Search For Employee
         </a>
         <a href="{% url 'request' %}" 
         {% if request.path == '/request/' %}
-        class="active" style="color: white;"
+        class="active" 
         {% endif %}
+        style="color: white;"
         >
             Submitted Vacations
         </a>
