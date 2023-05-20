@@ -18,17 +18,17 @@
                 <th> Submit Vacation </th>
                 <th> Edit Data </th>
             </tr>
-            <template users-template>
+            {% for employee in employees %}
                 <tr>
-                    <td user-name></td>
+                    <td>{{ employee.firstname }} {{employee.lastname}}</td>
                     <td> 
-                        <button class="button1" submit-vac><a href="" submitCheck> Submit form </a></button>
+                        <button class="button1" ><a href="{% url 'form' pk=employee.userid %}"> Submit Vacation </a></button>
                     </td>
                     <td>
-                        <button class="button2" edit-user><a href="{% url 'edit' %}"> Edit data </a> </button> 
+                        <button class="button2" ><a href="{% url 'edit' pk=employee.userid %}"> Edit data </a></button> 
                     </td>
                 </tr>
-            </template> 
+            {% endfor %}
         </table>
         
     </body>

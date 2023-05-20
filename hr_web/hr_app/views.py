@@ -24,24 +24,6 @@ class EmployeeView(View):
         request.session.save()
         return render(request, 'add2.html')
     
-    def search(self, request):
-        material_status = request.POST.get('material_status')
-        gender = request.POST.get('gender')
-        vcation_days = request.POST.get('vcation_days')
-        approved_vacation = request.POST.get('approved_vacation')
-        phone = request.POST.get('phone')
-        salary = request.POST.get('salary')
-        date = request.POST.get('date')
-        if request.method == 'POST' and salary != None:
-            firstname = request.session['firstname']
-            lastname = request.session['lastname']
-            email = request.session['email']
-            userid = request.session['userid']
-            address = request.session['address']
-            data = Employee(firstname=firstname, lastname=lastname, email=email, userid=userid, address=address, material_status=material_status, gender=gender, phone=phone, vcation_days=vcation_days, approved_vacation=approved_vacation, salary=salary, date=date)
-            data.save()
-        return render(request, 'search.html')
-    
     def dispatch(self, request, *args, **kwargs):
         # Call the desired function based on the URL or any other condition
         if request.path == '/addEmp/':
@@ -53,6 +35,11 @@ class EmployeeView(View):
         else:
             # Call the parent dispatch method to handle other cases
             return super().dispatch(request, *args, **kwargs)
+        
+def search(request):
+    employees = Employee.objects.all()
+    context = {'employees': employees}
+    return render(request,'search.html', context=context)
 
 def edit(request):
     return render(request, 'edit.html')
