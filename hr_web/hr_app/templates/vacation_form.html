@@ -3,30 +3,30 @@
 <html>
 
   <head>
-    <!-- <nav >
+    <nav >
       <div class="nav" style="background-color:#005bea; height: 90px;; margin-left:-10px; margin-top: -9px; margin-right: -10px; ">
         
-        <a href="home.html" style="color: white;">
+        <a href="{% url 'home' %}" style="color: white;">
           Home Page
         </a>
-        <a href="add1.html" style="color: white;">
+        <a href="{% url 'add' %}" style="color: white;">
           Add Employee
         </a>
-        <a href="search.html" style="color: white;">
+        <a href="{% url 'search' %}" style="color: white;">
           Search For Employee
         </a>
-        <a href="vacation_requsets.html" style="color: white;">
+        <a href="{% url 'request' %}" style="color: white;">
           Submitted Vacations
         </a>
       </div>
-    </nav> -->
+    </nav>
  
   <link rel =" stylesheet" href="{% static 'style/vacation_form.css' %}">
   <link rel =" stylesheet" href="{% static 'style/navStyle.css' %}">
   <title> Vacation Form </title>
 </head>
   <body>
-    {% include 'partials/_header.html' %}
+    
     <div class="backgr"> <h1> Vacation Form </h1> </div>
    
     <form onsubmit=s() action="{% url 'search' %}">
