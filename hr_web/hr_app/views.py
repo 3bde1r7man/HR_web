@@ -31,7 +31,7 @@ class EmployeeView(View):
         elif request.path == '/addEmp2/':
             return self.add_employee2(request) 
         elif request.path == '/search/':
-            return self.search(request) 
+            return render(request, 'search.html') 
         else:
             # Call the parent dispatch method to handle other cases
             return super().dispatch(request, *args, **kwargs)
