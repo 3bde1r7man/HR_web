@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
   <head>
-    <nav >
+    <!-- <nav >
       <div class="nav" style="background-color:#005bea; height: 90px;; margin-left:-10px; margin-top: -9px; margin-right: -10px; ">
         
-        <a href="home_page.html" style="color: white;">
+        <a href="home.html" style="color: white;">
           Home Page
         </a>
         <a href="add1.html" style="color: white;">
@@ -18,17 +19,17 @@
           Submitted Vacations
         </a>
       </div>
-    </nav>
+    </nav> -->
  
-  <link rel =" stylesheet" href="../style/vacation_form.css">
-  <link rel =" stylesheet" href="../style/navStyle.css">
+  <link rel =" stylesheet" href="{% static 'style/vacation_form.css' %}">
+  <link rel =" stylesheet" href="{% static 'style/navStyle.css' %}">
   <title> Vacation Form </title>
 </head>
-
   <body>
+    {% include 'partials/_header.html' %}
     <div class="backgr"> <h1> Vacation Form </h1> </div>
    
-    <form onsubmit=s() action="search.html">
+    <form onsubmit=s() action="{% url 'search' %}">
       
         <div class="idd">
           
@@ -41,11 +42,11 @@
           
           <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="Name">
         </div>
-           
+          
       <br>
     
         <div class="fDate">
-         
+        
           <input type="text" id="from-Date" class="fD" onfocus="(this.type = 'date')" required name="from date" min="2023-04-17" max="2023-12-12" placeholder="From Date">
         </div>
     
@@ -68,11 +69,11 @@
     
     </form>
         
-    <img src="../shapes/shape2.png" class="sh2" alt="shape">
-    <img src="../shapes/shape1_right.png" class="sh1_r" alt="shape">
-    <img src="../shapes/shape1_left.png" class="sh1_l" alt="shape">
+    <img src="{% static 'shapes/shape2.png' %}" class="sh2" alt="shape">
+    <img src="{% static 'shapes/shape1_right.png' %}" class="sh1_r" alt="shape">
+    <img src="{% static 'shapes/shape1_left.png' %}" class="sh1_l" alt="shape">
   
-    <script src="../js/vac_form.js"> </script>
+    <script src="{% static 'js/vac_form.js' %}"> </script>
   </body>
   
 </html>

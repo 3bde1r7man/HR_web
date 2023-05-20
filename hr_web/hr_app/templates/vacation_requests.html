@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Submitted Vacation </title>
+        <link rel = "stylesheet" href="{% static 'style/vacation_requestsStyle.css' %}">
+        <link rel="stylesheet" href="{% static 'style/navStyle.css' %}">
+        <script src="{% static 'js/requests.js' %}" ></script>
+        
+    </head>
+    
+    <body>
+        {% include 'partials/_header.html' %}
+        <h1> Submitted Vacation</h1>
+        <table >
+            <thead>
+                <tr>
+                    <th> Emploee ID </th>
+                    <th> Name </th>
+                    <th> From Date </th>
+                    <th> To Date </th>
+                    <th> Reason </th>
+                    <th> Status </th>
+                    <th> Action </th>
+                </tr>
+            </thead>
+            <tbody id = "vacations-table"> </tbody>
+        </table>
+        <img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape" >
+      
+    </body>
+</html>

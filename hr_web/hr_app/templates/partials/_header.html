@@ -1,0 +1,32 @@
+<nav>
+    <div class="nav">
+        <a href="{% url 'home' %}" 
+        {% if request.path == '/home/' %}
+        class="active" style="color: white;"
+        {% endif %}
+        >
+            Home Page
+        </a>
+        <a href="{% url 'add' %}" 
+        {% if request.path == '/add/' %}
+        class="active" style="color: white;"
+        {% endif %}
+        >
+            Add Employee
+        </a>
+        <a href="{% url 'search' %}" 
+        {% if request.path == '/search/' %}
+        class="active" style="color: white;"
+        {% endif %}
+        >
+            Search For Employee
+        </a>
+        <a href="{% url 'request' %}" 
+        {% if request.path == '/request/' %}
+        class="active" style="color: white;"
+        {% endif %}
+        >
+            Submitted Vacations
+        </a>
+    </div>
+</nav>
