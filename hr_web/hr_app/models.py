@@ -29,20 +29,22 @@ class Employee(models.Model):
     date_of_birth = models.DateField(default= None)
     vacation_number = models.IntegerField(validators=[  MinValueValidator(1,message="Value must be greater than or equal to 1."),
                                                         MaxValueValidator(10,message="Value must be less than or equal to 10.")],default= 10)
-    aprroved_vacation_number = models.IntegerField(validators=[ MinValueValidator(1,message="Value must be greater than or equal to 1."),
+    approved_vacation_number = models.IntegerField(validators=[ MinValueValidator(1,message="Value must be greater than or equal to 1."),
                                                                 MaxValueValidator(10,message="Value must be less than or equal to 10.")], default= 0)
+    def __str__(self):
+      return self.first_name + ' ' + self.last_name
     
-    def clean(self):
-        pattern = r'^(\+2)?01(0|1|2)\d{8}$'
-        if not re.match(pattern, self.phone_number):
-            raise ValidationError(
-                f'{self.phone_number} is not a valid phone number',
-                params={'value': self.phone_number},
-            )
-        if self.date_of_birth.year < date.today().year- 21:
-            raise ValidationError(
-                f'Employee must be older than 21 years old',
-            )
+    # def clean(self):
+    #     pattern = r'^(\+2)?01(0|1|2)\d{8}$'
+    #     if not re.match(pattern, self.phone_number):
+    #         raise ValidationError(
+    #             f'{self.phone_number} is not a valid phone number',
+    #             params={'value': self.phone_number},
+    #         )
+    #     if self.date_of_birth.year < date.today().year- 21:
+    #         raise ValidationError(
+    #             f'Employee must be older than 21 years old',
+    #         )
 
 class Vacation(models.Model):
     STATUS_CHOICES = (
@@ -55,3 +57,4 @@ class Vacation(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, max_length=50)
     Reason = models.TextField()
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+    emp_Name = models.CharField(max_length=50, null=True)

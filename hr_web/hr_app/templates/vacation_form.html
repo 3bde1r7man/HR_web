@@ -29,38 +29,33 @@
     
     <div class="backgr"> <h1> Vacation Form </h1> </div>
    
-    <form onsubmit=s() action="{% url 'search' %}">
-      
+    <form method="POST" action="{% url 'search' %}">
+      {% csrf_token %}
         <div class="idd">
-          
-          <input type="text" id="emp-ID"class ="eid" required name="id" disabled placeholder="ID" >
+          {{form.employee}}
         </div>
     
       <br>
     
         <div class="empname">
           
-          <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="Name">
+          {{form.emp_Name}}
         </div>
           
       <br>
     
         <div class="fDate">
-        
-          <input type="text" id="from-Date" class="fD" onfocus="(this.type = 'date')" required name="from date" min="2023-04-17" max="2023-12-12" placeholder="From Date">
+        {{form.from_date}}
         </div>
     
       <br>
     
         <div class="tDate">
-          
-          <input type="text" id="to-Date" class="tD" onfocus="(this.type = 'date')" required name="to date" min="2023-04-17" max="2023-12-12" placeholder="To Date">    
+          {{form.to_date}}
         </div>
       
         <div class="reason">
-        
-          
-        <textarea name="subject" id="Reason" class="rs" cols="30" rows="5" required placeholder="Enter The Reason"></textarea>
+          {{form.Reason}}
         </div>
     
       <br>  <br>
