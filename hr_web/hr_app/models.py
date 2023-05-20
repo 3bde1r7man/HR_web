@@ -26,11 +26,11 @@ class Employee(models.Model):
     phone_number = models.CharField(max_length=15)
     salary = models.IntegerField(validators=[MinValueValidator(2000,message="Value must be greater than or equal to 2000."),
                                              MaxValueValidator(6000,message="Value must be less than or equal to 6000.")])
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(default= None)
     vacation_number = models.IntegerField(validators=[  MinValueValidator(1,message="Value must be greater than or equal to 1."),
-                                                        MaxValueValidator(10,message="Value must be less than or equal to 10.")])
+                                                        MaxValueValidator(10,message="Value must be less than or equal to 10.")],default= 10)
     aprroved_vacation_number = models.IntegerField(validators=[ MinValueValidator(1,message="Value must be greater than or equal to 1."),
-                                                                MaxValueValidator(10,message="Value must be less than or equal to 10.")])
+                                                                MaxValueValidator(10,message="Value must be less than or equal to 10.")], default= 0)
     
     def clean(self):
         pattern = r'^(\+2)?01(0|1|2)\d{8}$'
