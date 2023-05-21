@@ -20,12 +20,12 @@
             </tr>
             {% for employee in employees %}
                 <tr>
-                    <td>{{ employee.first_name }} {{employee.last_name}}</td>
+                    <td>{{ employee.firstname }} {{employee.lastname}}</td>
                     <td> 
-                        <button class="button1" ><a href="{% url 'form' pk=employee.emp_id %}"> Submit Vacation </a></button>
+                        <button class="button1" ><a href="{% url 'form' pk=employee.userid %}"> Submit Vacation </a></button>
                     </td>
                     <td>
-                        <button class="button2" ><a href="{% url 'edit' pk=employee.emp_id %}"> Edit data </a></button> 
+                        <button class="button2" ><a href="{% url 'edit' pk=employee.userid %}"> Edit data </a></button> 
                     </td>
                 </tr>
             {% endfor %}

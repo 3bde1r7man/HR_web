@@ -1,37 +1,41 @@
 from django import forms
 from . import models
 
+
 class AddEmployee1(forms.ModelForm):
     class Meta:
         model = models.Employee
-        fields = ["emp_id","first_name", "last_name", "email",  "address"]
+        fields = ["firstname", "lastname", "email", "userid", "address"]
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'x',"placeholder":"First name","id":"firstname"}),
-            'last_name': forms.TextInput(attrs={'class': 'x1',"placeholder":"Last name","id":"lastname"}),
-            'email': forms.TextInput(attrs={'class': 'x2',"placeholder":"Your e-mail","id":"email"}),
-            'emp_id': forms.TextInput(attrs={'class': 'x3', 'placeholder': 'User id'}),
-            'address': forms.TextInput(attrs={'class': 'x4',"placeholder":"Address","id":"address"}),
-            }
-        
+            "firstname": forms.TextInput(attrs={"class": "x", "placeholder": "First name", "required": True, "id": "firstname"}),
+            "lastname": forms.TextInput(attrs={"class": "x1", "placeholder": "Last name", "required": True, "id": "lastname"}),
+            "email": forms.EmailInput(attrs={"class": "x2", "placeholder": "Your email address", "required": True, "id": "email"}),
+            "userid": forms.NumberInput(attrs={"class": "x3", "placeholder": "User id", "required": True, "min": "1", "max": "2000", "id": "userid"}),
+            "address": forms.TextInput(attrs={"class": "x4", "placeholder": "address", "required": True, "id": "address", "min": "10", "max": "50"}),
+        }
+
 class AddEmployee2(forms.ModelForm):
     class Meta:
         model = models.Employee
-        fields = ["matrial_status","gender","phone_number","salary","date_of_birth","vacation_number","approved_vacation_number"]
+        fields = ["material_status", "gender", "phone", "vcation_days", "approved_vacation", "date", "salary"]
         widgets = {
-            "matrial_status": forms.Select( choices=models.Employee.MATRIAL_STATUS_CHOICES),
-            "gender": forms.Select(choices=models.Employee.GENDER_CHOICES),
-            "phone_number": forms.TextInput(attrs={"class": "x2","placeholder": "Phone number"}),
-            "salary": forms.NumberInput(attrs={"class": "x6","placeholder": "Salary"}),
-            "date_of_birth": forms.DateInput(attrs={"class": "x6","placeholder": "Date of birth","type":"date"}),
-            "vacation_number": forms.NumberInput(attrs={"class": "x6","placeholder": "Vacation number"}),
+            "material_status": forms.Select(attrs={"id": "materialStatus", "class": "x1", "required": True}),
+            "gender": forms.Select(attrs={"id": "gender", "class": "x2", "required": True}),
+            "phone": forms.TextInput(attrs={"id": "phoneNum", "class": "x2", "placeholder": "Phone number", "required": True, "pattern": "^01[0-2]\d{1,8}$", "minlength": "11", "maxlength": "11"}),
+            "vcation_days": forms.NumberInput(attrs={"id": "vacationNum", "class": "x3", "placeholder": "Vacation days number", "required": True, "min": "1",  "max": "10"}),
+            "approved_vacation": forms.NumberInput(attrs={"id": "ApprovedVactions", "class": "x4", "placeholder": "Approved vacation days", "required": True, "min": "0"}),
+            "date": forms.DateInput(attrs={"type": "date", "id": "date", "class": "x5", "placeholder": "Date Of Birth", "required": True, "min": "1990-01-01", "max": "2005-12-31"}),
+            "salary": forms.NumberInput(attrs={"id": "salary", "class": "x6", "placeholder": "Salary", "required": True, "min": "2000", "max": "6000"})
         }
+
+
 class EditEmployee(forms.ModelForm):
     class Meta:
         model = models.Employee
         fields = "__all__"
-        exclude = ['emp_id']
+        exclude = ['userid']
         widgets = {
-            "date_of_birth": forms.DateInput(attrs={"placeholder": "Date of birth","type":"date"}),
+            "date": forms.DateInput(attrs={"placeholder": "Date of birth","type":"date"}),
         }
 
 class vacationForm(forms.ModelForm):

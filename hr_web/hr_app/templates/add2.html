@@ -18,48 +18,40 @@
         </div>
         
         <div class ="f"></div>
-        <form method="POST">
+        <form method = 'POST'>
             {% csrf_token %}
             <div class = "k">
+                
                 <div class="a">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                    {{form.matrial_status}}
-                    {{form.matrial_status.errors}}
-            
+                    {{ form.material_status }}
                 </div>
                 <div class="b">
                     <i class="fa fa-user icon" style="font-size: 1.5em;"></i>
-                    {{form.gender}}
-                    {{form.gender.errors}}
+                    {{ form.gender }}
                 </div>
                 <div class="c">
                     <i class="fa fa-phone"style="font-size: 1.5em;"></i>
-                    {{form.phone_number}}
-                    {{form.phone_number.errors}}
+                    {{form.phone}}
                 </div>
                 <div class="d">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    {{form.vacation_number}}            
-                    {{form.vacation_number.errors}}            
+                    {{form.vcation_days}}
                 </div>
                 <div class="e">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    {{form.approved_vacation_number}}
-                    {{form.approved_vacation_number.errors}}
+                    {{form.approved_vacation}}
                 </div>
                 <div class="g">
                     <i class="fa fa-calendar" style="font-size: 1.5em;"></i>
-                    {{form.date_of_birth}}
-                    {{form.date_of_birth.errors}}
+                    {{form.date}}
                 </div>
                 <div class="h">
                     <i class="fa fa-dollar" style="font-size: 1.5em;"></i>
                     {{form.salary}}
-                    {{form.salary.errors}}
                 </div>
-                {{form.non_field_errors}}
             </div>
-            <button type="submit" onclick="JS2()" class="button">Creat account</button>
+            <button type="submit" class="button">Creat account</button>
         </form>
         <img src="{% static 'shapes/shape1.png' %}" class="i" alt="shape" >
         <img src="{% static 'shapes/shape1.png' %}" class="i1" alt="shape">
