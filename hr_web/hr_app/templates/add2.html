@@ -18,7 +18,7 @@
         </div>
         
         <div class ="f"></div>
-        <form method = 'POST' action="{% url 'search' %}">
+        <form method = 'POST'>
             {% csrf_token %}
             <div class = "k">
                 <div class="a">
@@ -64,7 +64,7 @@
                     <input type="number" id="salary" class="x6  " placeholder="Salary" name="salary" min = "2000" max= "6000" required/>
                 </div>
             </div>
-            <button type="submit" onclick="JS2()" class="button">Creat account</button>
+            <button type="submit" class="button">Creat account</button>
         </form>
         <img src="{% static 'shapes/shape1.png' %}" class="i" alt="shape" >
         <img src="{% static 'shapes/shape1.png' %}" class="i1" alt="shape">

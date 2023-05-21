@@ -16,7 +16,7 @@
     </head>
     <body>
         {% include 'partials/_header2.html' %}
-        <form  method = 'POST' action="{% url 'add_employee2' %}">
+        <form  method = 'POST'>
             {% csrf_token %}
             <div>
                 <h1>welcome !</h1>
@@ -47,7 +47,7 @@
                 <i class="fa fa-map-marker" style="font-size: 1.5em;"></i>
                 <input type="text" class="x4" id="address" placeholder="address" name = "address"   minlength = "10" maxlength = "50" required/>
             </div>
-            <button type="submit" onclick="JS()" id="insert" class="button">Continue</button>
+            <button type="submit" id="insert" class="button">Continue</button>
         </form>
         <img src="{% static 'shapes/shape1.png' %}" class="i" alt="shape" >
         <img src="{% static 'shapes/shape1.png' %}" class="i1" alt="shape">
