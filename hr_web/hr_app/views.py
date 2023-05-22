@@ -1,7 +1,11 @@
 from django.contrib import messages
-from django.views import View
+from django.views import View 
+from django.views.generic import UpdateView,DeleteView
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from .models import Employee
+from forms import EditEmployee
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def home(request):
@@ -51,6 +55,32 @@ class EmployeeView(View):
             # Call the parent dispatch method to handle other cases
             return super().dispatch(request, *args, **kwargs)
 
+class UpdateEmployeeView(UpdateView):
+    model = Employee
+    form_class = EditEmployee
+    template_name = 'edit.html'
+    success_url = reverse_lazy('search')
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['pk'] = self.kwargs['pk']
+        return context
+
+def vacation_form(request):
+    return render(request, 'vacation_form.html')
+
+def vacation_request(request):
+    return render(request, 'vacation_requests.html')
+
+
+class DeleteEmployeeView(DeleteView):
+    model = Employee
+    template_name = 'edit.html'
+    success_url = reverse_lazy('search')
+
+    def post(self, *args, **kwargs):
+        self.object.delete()
+        return HttpResponseRedirect(self.success_url)
 
 def search(request):
     employees = Employee.objects.all()
