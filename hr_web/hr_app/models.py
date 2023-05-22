@@ -42,6 +42,7 @@ class Vacation(models.Model):
     toDate = models.DateField()
     reason = models.TextField()
     status = models.CharField(max_length=50,choices=Status) 
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     def __str__(self):
         return self.emp_name
 

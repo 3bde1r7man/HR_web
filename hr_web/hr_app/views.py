@@ -100,7 +100,7 @@ class VacationView:
             status ="Submitted"
             e_id = current_user.userid
             e_name = current_user.firstname + ' ' + current_user.lastname
-            data = Vacation(emp_id=e_id, emp_name=e_name, fromDate=from_date, toDate=to_date, reason=reason, status=status)
+            data = Vacation(emp_id=e_id, emp_name=e_name, fromDate=from_date, toDate=to_date, reason=reason, status=status, employee=current_user)
 
             if (from_date >= to_date):
                 messages.error(request, 'Please enter a valid date range!')
