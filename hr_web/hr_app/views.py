@@ -3,9 +3,11 @@ from django.views import View
 from django.views.generic import UpdateView,DeleteView
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from .models import Employee
+from .models import Employee, Vacation
 from .forms import EditEmployee
-from django.http import HttpResponseRedirect
+from django.template import RequestContext
+from django.shortcuts import get_object_or_404
+from django.http import HttpResponseRedirect, JsonResponse
 
 # Create your views here.
 def home(request):
@@ -80,8 +82,64 @@ def search(request):
 def edit(request):
     return render(request, 'edit.html')
 
-def vacation_form(request):
-    return render(request, 'vacation_form.html')
+class VacationView:
+    def vacation_form(request, pk):
+    
+        current_user = Employee.objects.get(pk=pk)
+        existed_request = Vacation.objects.filter(emp_id=current_user.userid).exists()
+        if existed_request:
+            messages.error(request, 'You have already submitted a request!')
+            return redirect('search')
+        
+        context={'current_user':current_user,'fullname':current_user.firstname + ' ' + current_user.lastname}
+        
+        if request.method == 'POST':
+            from_date = request.POST.get('from_date')
+            to_date = request.POST.get('to_date')
+            reason = request.POST.get('subject')
+            status ="Submitted"
+            e_id = current_user.userid
+            e_name = current_user.firstname + ' ' + current_user.lastname
+            data = Vacation(emp_id=e_id, emp_name=e_name, fromDate=from_date, toDate=to_date, reason=reason, status=status)
 
-def vacation_request(request):
-    return render(request, 'vacation_requests.html')
+            if (from_date >= to_date):
+                messages.error(request, 'Please enter a valid date range!')
+                return render(request, 'vacation_form.html', context=context)             
+            
+            data.save()
+            messages.success(request, 'Your request has been submitted successfully!')
+            return redirect('search')
+        
+        return render(request, 'vacation_form.html', context=context)
+
+
+    def vacation_request(request):
+        return render(request, 'vacation_requests.html')
+
+    def all_vacations(request):
+        vacations = Vacation.objects.values()
+        return JsonResponse(list(vacations), safe=False)
+
+    def approve_vacation(request, id):
+        if request.method == 'POST':
+            employee = get_object_or_404(Employee, pk=id)
+            vacation = get_object_or_404(Vacation, emp_id=id)
+            from_date = vacation.fromDate
+            to_date = vacation.toDate
+            diff = (to_date - from_date).days
+            days = diff
+            if employee.vcation_days >= days:
+                employee.vcation_days -= days
+                employee.approved_vacation += days
+                employee.save()
+                vacation.delete()
+                return JsonResponse({'message': 'Vacation approved successfully.'})
+            else:
+                vacation.delete()
+                return JsonResponse({'message': 'Invalid number of vacation days.'}, status=400)
+
+    def reject_vacation(request, id):
+        if request.method == 'POST':
+            vacation = get_object_or_404(Vacation, emp_id=id)
+            vacation.delete()
+            return JsonResponse({'message': 'Vacation rejected successfully.'})

@@ -9,7 +9,7 @@
         <a href="{% url 'home' %}" style="color: white;">
           Home Page
         </a>
-        <a href="{% url 'add' %}" style="color: white;">
+        <a href="{% url 'add_employee' %}" style="color: white;">
           Add Employee
         </a>
         <a href="{% url 'search' %}" style="color: white;">
@@ -29,32 +29,37 @@
     
     <div class="backgr"> <h1> Vacation Form </h1> </div>
    
-    <form onsubmit=s() action="{% url 'search' %}">
+    <form method='POST' onsubmit=s() >
+      {% csrf_token %}
       
         <div class="idd">
           
-          <input type="text" id="emp-ID"class ="eid" required name="id" disabled placeholder="ID" >
+          <input type="text" id="emp-ID" value="{{current_user.userid}}" style="color: #336e90; font-size: 28px;
+          font-family: sans-serif; font-weight:bold;"
+          class ="eid" required name="Employee_id" disabled placeholder="ID" >
         </div>
     
       <br>
     
         <div class="empname">
           
-          <input type="text" class ="en" id ="emp-Name"required name="Employee name" disabled  placeholder="Name">
+          <input type="text" class ="en" id ="emp-Name" value="{{fullname}}" style="color: #336e90; font-size: 28px;
+            font-family: sans-serif; font-weight:bold; 
+            "required name="Employee_name" disabled  placeholder="Name">
         </div>
           
       <br>
     
         <div class="fDate">
         
-          <input type="text" id="from-Date" class="fD" onfocus="(this.type = 'date')" required name="from date" min="2023-04-17" max="2023-12-12" placeholder="From Date">
+          <input type="text" id="from-Date" class="fD" style="color: #336e90;"  onfocus="(this.type = 'date')" required name="from_date" min="2023-04-15" max="2024-12-31" placeholder="From Date">
         </div>
     
       <br>
     
         <div class="tDate">
           
-          <input type="text" id="to-Date" class="tD" onfocus="(this.type = 'date')" required name="to date" min="2023-04-17" max="2023-12-12" placeholder="To Date">    
+          <input type="text" id="to-Date" class="tD" style="color: #336e90;" onfocus="(this.type = 'date')" required name="to_date" min="2023-04-15" max="2024-12-31" placeholder="To Date">    
         </div>
       
         <div class="reason">
@@ -73,7 +78,7 @@
     <img src="{% static 'shapes/shape1_right.png' %}" class="sh1_r" alt="shape">
     <img src="{% static 'shapes/shape1_left.png' %}" class="sh1_l" alt="shape">
   
-    <script src="{% static 'js/vac_form.js' %}"> </script>
+    <script src="{% static 'js/vac_form.js' %}" defer> </script>
   </body>
   
 </html>

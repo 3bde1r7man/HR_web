@@ -11,6 +11,9 @@ urlpatterns = [
     path('search/', views.search, name= "search"),
     path('employees/<pk>/update', views.UpdateEmployeeView.as_view(), name= "edit"),
     path('employees/<pk>/delete',views.DeleteEmployeeView.as_view(), name= "delete"),
-    path('form/<int:pk>/', views.vacation_form, name= "form"),
-    path('request/', views.vacation_request, name= "request"),
+    path('form/<int:pk>/', views.VacationView.vacation_form, name= "form"),
+    path('request/', views.VacationView.vacation_request, name= "request"),
+    path('all_vacations/', views.VacationView.all_vacations, name= "all_vacations"),
+    path('approve_vacation/<int:id>/', views.VacationView.approve_vacation, name='approve_vacation'),
+    path('reject_vacation/<int:id>/', views.VacationView.reject_vacation, name='reject_vacation'),
 ]

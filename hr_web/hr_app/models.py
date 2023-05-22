@@ -30,3 +30,20 @@ class Employee(models.Model):
     def __str__(self):
         return self.firstname + " " + self.lastname 
     
+class Vacation(models.Model):
+    Status = [
+        ('Submitted', 'Submitted'),
+        ('Approved', 'Approved'),
+        ('Rejected', 'Rejected'),
+    ]
+    emp_id = models.IntegerField()
+    emp_name = models.CharField(max_length=50)  
+    fromDate = models.DateField()
+    toDate = models.DateField()
+    reason = models.TextField()
+    status = models.CharField(max_length=50,choices=Status) 
+    def __str__(self):
+        return self.emp_name
+
+
+    
