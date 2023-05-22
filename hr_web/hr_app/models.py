@@ -29,6 +29,9 @@ class Employee(models.Model):
     salary = models.IntegerField()
     date = models.DateField(null = True)
 
+    def __str__(self):
+        return self.firstname  + " " + self.lastname 
+
 class Vacation(models.Model):
     STATUS_CHOICES = (
         ("Submitted", "Submitted"),
@@ -40,4 +43,6 @@ class Vacation(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, max_length=50)
     Reason = models.TextField()
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
-    emp_Name = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return str(self.employee)

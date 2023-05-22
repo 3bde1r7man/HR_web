@@ -38,16 +38,14 @@ class EditEmployee(forms.ModelForm):
             "date": forms.DateInput(attrs={"placeholder": "Date of birth","type":"date"}),
         }
 
-class vacationForm(forms.ModelForm):
+class VacationForm(forms.ModelForm):
     class Meta:
         model = models.Vacation
-        fields = ["employee","emp_Name","from_date","to_date", "Reason"]
+        fields = ["from_date", "to_date", "Reason"]
         widgets = {
-            "employee": forms.TextInput(attrs={"id": "emp-ID","class": "eid","placeholder": "ID", "disabled": "True",}),
-            "emp_Name": forms.TextInput(attrs={"id": "emp-Name","class": "en","placeholder": "Name", "disabled": "True",}),
-            "from_date": forms.DateInput(attrs={"id": "from-Date", "class": "fD", "required": "True", "min": "2023-04-17", "max": "2023-12-12"}),
-            "to_date": forms.DateInput(attrs={"id": "to-Date", "class": "tD", "required": "True", "min": "2023-04-17", "max": "2023-12-12"}),    
-            "Reason": forms.Textarea(attrs={"id": "Reason","class": "rs","placeholder": "Enter The Reason","cols": "30", "rows": "5", "required": "True",}),
+            "from_date": forms.DateInput(attrs={"type": "date", "id": "from-Date", "class": "fD", "required": True}),
+            "to_date": forms.DateInput(attrs={"type": "date", "id": "to-Date", "class": "tD", "required": True}),
+            "Reason": forms.Textarea(attrs={"id": "Reason", "class": "rs", "placeholder": "Enter The Reason", "cols": "30", "rows": "5", "required": True}),
         }
     
 

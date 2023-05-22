@@ -1,10 +1,10 @@
 from typing import Any, Dict
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.views.generic import UpdateView,DeleteView
-from .forms import vacationForm, EditEmployee, AddEmployee1, AddEmployee2
-from .models import Employee
+from .forms import VacationForm, EditEmployee, AddEmployee1, AddEmployee2
+from .models import Employee, Vacation
 
 # Create your views here.
 def home(request):
@@ -84,25 +84,38 @@ def search(request):
     return render(request,'search.html', context=context)
 
 
-def vacation_form(request, pk=None):
-    if pk:
-        employee = Employee.objects.get(pk=pk)
-        form = vacationForm(initial={'employee': employee.userid, 'emp_Name': employee.firstname + ' ' + employee.lastname})
-    else:
-        form = vacationForm()
+def vacation_form(request, pk):
+    employee = Employee.objects.get(pk=pk)
     
-    if request.method == 'POST' and pk is not None:
-        form = vacationForm(request.POST)
+    if request.method == 'POST':
+        form = VacationForm(request.POST)
+        print('befor valid')
+        print(str(form.instance.from_date) + ' ' + str(form.instance.to_date) + ' ' + str(form.instance.Reason) + '\n')
+        print(form.is_valid())
+
         if form.is_valid():
-            form.save()
+            vacation = form.save(commit=False)
+            vacation.employee = employee
+            vacation.status = "Submitted"
+            vacation.save()
             return redirect('search')
+    else:
+        initial_data = {
+            
+        }
+        form = VacationForm()
     
-    context = {'form': form}
+    context = {'form': form , 'emp_Name': f'{employee.firstname} {employee.lastname}','emp_id': employee.userid}
     return render(request, 'vacation_form.html', context=context)
 
 
+
+
 def vacation_request(request):
-    return render(request, 'vacation_requests.html')
+    vacations = Vacation.objects.all()
+    context = {'vacations': vacations}
+    return render(request, 'vacation_requests.html', context=context)
+
 
 
 def handler404(request, exception):
