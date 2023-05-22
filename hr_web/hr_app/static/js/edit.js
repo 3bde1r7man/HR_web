@@ -40,15 +40,12 @@ function del(delete_url) {
     },
     body: JSON.stringify({})
   })
-  .then(function(response) {
-    if (response.ok) {
-      console.log("Success");
-    } else {
-      console.log("Error");
-      throw new Error("Error: " + response.status);
-    }
-  })
-  .catch(function(error) {
-    alert(error);
-  });
+    .then(function (response) {
+      if (response.ok) {
+        console.log("Success");
+      } else {
+        console.log("Error");
+        throw new Error("Error: " + response.status);
+      }
+    });
 }
