@@ -36,8 +36,10 @@ th {
 }
 
 td{
-  color: #0059e6;
+  color: #0059e6 ;
   font-family: Liberation Sans;
+  font-weight:bold;
+  font-size: medium;
 }
 
 tr:nth-child(odd) {
@@ -46,17 +48,19 @@ tr:nth-child(odd) {
 
 .button1 {
   color: #03327d;
+  font-size: medium;
   background-image: linear-gradient(90deg, #fdc201, #ff9e06);
-padding: 10px 20px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
   
 }
 
 .button2 {
   color: #ffffff;
+  font-size: medium;
   background-image: linear-gradient(90deg, #03327d, #0059e6);
   padding: 10px 20px;
   border: none;
