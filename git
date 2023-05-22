@@ -1,0 +1,532 @@
+[33mcommit 83537c5a2b147066b5447ce5e70740db18cb6a24[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Salmaabdelaziz271 <salmayaraaa@gmail.com>
+Date:   Mon May 22 23:17:26 2023 +0300
+
+    update requests.css
+
+[33mcommit 4d4e552b05ffaaa125677de4b6559831eb89a0b4[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Salmaabdelaziz271 <salmayaraaa@gmail.com>
+Date:   Mon May 22 21:50:02 2023 +0300
+
+    add vacation
+
+[33mcommit 65f0b60aca2e741967ffaa7f36259ef92147597a[m[33m ([m[1;31morigin/salma[m[33m)[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon May 22 16:52:51 2023 +0200
+
+    fix some errors with edit delete emp
+
+[33mcommit 75b6197efe17e7ee31bda7b59862ab043ad94701[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon May 22 16:21:10 2023 +0200
+
+    create edit functionality
+
+[33mcommit c0500a4a8806e2b2ea1ea724cd751720de4c883d[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sun May 21 17:11:38 2023 +0300
+
+    add emp at there own function
+
+[33mcommit c172864b46dcf32d93e7aca2efb6815b25590cf9[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sun May 21 01:24:53 2023 +0300
+
+    test
+
+[33mcommit 0087a93485574ac417ad87c6b765c73b1c57f8bf[m
+Merge: 793a184 0c8ec2c
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sun May 21 00:59:00 2023 +0300
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit 793a184ebebf2556debcc7d33ddd8339ddb782be[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sun May 21 00:58:57 2023 +0300
+
+    search is done
+
+[33mcommit 0c8ec2ca62d6134b61dfc984da622fbc0bee425c[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Sun May 21 00:52:54 2023 +0300
+
+    added git ignore
+
+[33mcommit 990750c3be5fc70e4321f0aee86217a1e3f01e00[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Sun May 21 00:50:07 2023 +0300
+
+    Added git ignore
+
+[33mcommit d44d83071678900463afcd3d961815df0a10ffdc[m
+Author: you22ef <102329215+you22ef@users.noreply.github.com>
+Date:   Sat May 20 22:47:51 2023 +0200
+
+    add_employee
+    
+    add_employee
+
+[33mcommit 0e7ec88b39150570ed924c6bbd20266d52dd1db4[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat May 20 13:25:27 2023 +0300
+
+    header
+
+[33mcommit a31063f189cd72f1ad4d7ec72266f67170466aa0[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat May 20 13:18:35 2023 +0300
+
+    form
+
+[33mcommit deda68d880c194fa4d95fb30427e8af37b1eb2cd[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat May 20 13:12:41 2023 +0300
+
+    added views & urls & config the settings
+
+[33mcommit fb5c26b92c8b2cc1e60b9d6a2afd7a5f4c62c352[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat May 13 17:36:04 2023 +0300
+
+    added django init main project and app
+
+[33mcommit 8d561135da781b181115d53271816d0bc51fc97b[m
+Merge: 4ef37ea 9697df3
+Author: Seif Ibrahim <101884857+Seif-Ibrahim1@users.noreply.github.com>
+Date:   Mon Apr 17 22:32:39 2023 +0200
+
+    Merge pull request #12 from Seif-Ibrahim1/main
+    
+    Added last changes
+
+[33mcommit 9697df3dcfbb34b42bf1e2a7b61a548d2bd83d89[m
+Merge: b02cb80 4ef37ea
+Author: Seif Ibrahim <101884857+Seif-Ibrahim1@users.noreply.github.com>
+Date:   Mon Apr 17 22:32:13 2023 +0200
+
+    Merge branch '3bde1r7man:main' into main
+
+[33mcommit b02cb801b7e41d7f5df13ebd6fa06fa2c1117a12[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 22:31:28 2023 +0200
+
+    Added last changes
+
+[33mcommit 4ef37eae870cec5855cb56face382726f485f8c0[m
+Merge: f83b3d1 49f621a
+Author: Seif Ibrahim <101884857+Seif-Ibrahim1@users.noreply.github.com>
+Date:   Mon Apr 17 21:19:23 2023 +0200
+
+    Merge pull request #11 from Seif-Ibrahim1/main
+    
+    Removed a test case
+
+[33mcommit 49f621afa67893b4ab03b0d7bf08add31d7c198a[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 21:18:44 2023 +0200
+
+    Removed a test case
+
+[33mcommit f83b3d1597bd932533513b2cadbbf003c90b41b0[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 19:56:03 2023 +0200
+
+    edit style
+
+[33mcommit 0eef431f49e6ab8bacb54d61d0c1f6a72ea404a9[m
+Merge: 58efe0d a5e4e4a
+Author: Seif Ibrahim <101884857+Seif-Ibrahim1@users.noreply.github.com>
+Date:   Mon Apr 17 19:51:41 2023 +0200
+
+    Merge pull request #10 from Seif-Ibrahim1/main
+    
+    added constraint on submit
+
+[33mcommit a5e4e4a236f6f99b9770b097970b6bbc5e3c8f2b[m
+Merge: 95e093b 58efe0d
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 19:50:33 2023 +0200
+
+    Merge branch 'main' of github.com:Seif-Ibrahim1/HR_web
+
+[33mcommit 95e093b489b364ec479c9515444f7e84445696d1[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 19:50:22 2023 +0200
+
+    added constraint on submit
+
+[33mcommit 58efe0d354b3bdd7448c81117c5667cb442f6507[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 19:23:35 2023 +0200
+
+    Update requests.js
+
+[33mcommit 2143483456fc68f156234edeab11253aeeb674ef[m
+Author: Salmaabdelaziz271 <93342442+Salmaabdelaziz271@users.noreply.github.com>
+Date:   Mon Apr 17 18:25:22 2023 +0200
+
+    Update requests.js
+
+[33mcommit e306497218c340bdb602c966675afaf2c951f024[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 18:06:12 2023 +0200
+
+    Update vac_form.js
+
+[33mcommit 16006208142051a164086a0a50da0d1af2f051d7[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 17:56:15 2023 +0200
+
+    edit
+
+[33mcommit dfeb536fa05a8299741d7a6d59806f7ce0a9f062[m
+Merge: eb12ca3 56bb0a4
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 17:48:41 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit eb12ca3ff28953e3dcbd8f4a28da3a2b87293cb6[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 17:45:59 2023 +0200
+
+    projects page
+
+[33mcommit 56bb0a4238c6c95339ab6e371ba60635fe9117ff[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 17:43:25 2023 +0200
+
+    edit wave
+
+[33mcommit c07510c2c1ed6f66501105f32e81542c367813ea[m
+Merge: 4976e24 27dad97
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 17:09:07 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit 4976e24956c95be06f8ffa57499a072b6193a809[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 17:08:47 2023 +0200
+
+    add css styling
+
+[33mcommit 27dad97808d9720ba8a365252872dfb9785ed479[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 17:05:07 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit 39b0f5402fe5a1fa6137576eca5dc958f50440cf[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 16:48:38 2023 +0200
+
+    Update vac_form.js
+
+[33mcommit 7b6c0b0fc4ce067f2c57b5b3b542d648ca08b6ce[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 16:33:48 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit 4591d23d90dd10e3abf26d08f8c8a7ecb744810f[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 16:17:31 2023 +0200
+
+    dollar sign
+
+[33mcommit 7f352befb84ea083f8f52441d23f13c8efbd4415[m
+Merge: 369f5df 81f9fff
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 16:07:51 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit 369f5df37f557be72bcd80d35596c47eacc99aea[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 16:07:47 2023 +0200
+
+    search & home page
+
+[33mcommit 81f9fff3c64e67dec240a173c0c2053ddf014ce0[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 15:22:09 2023 +0200
+
+    Update edit.html
+
+[33mcommit 760433ee0aca8eafae7528f4cd85e4f004ef1ff7[m
+Merge: e4efa6e 635fc52
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 15:07:11 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit e4efa6ef5ac4a1fcabaef96ab40ad47ea6f06cdb[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Mon Apr 17 15:06:06 2023 +0200
+
+    edit style
+
+[33mcommit 635fc5203e4144531122dc48c7eaa397e091d9d5[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 15:05:53 2023 +0200
+
+    search style
+
+[33mcommit 089f183633ca8d744224d461424b79bafc5055b4[m
+Merge: 0a9d46b f73515b
+Author: Seif Ibrahim <101884857+Seif-Ibrahim1@users.noreply.github.com>
+Date:   Mon Apr 17 14:31:47 2023 +0200
+
+    Merge pull request #9 from Seif-Ibrahim1/main
+    
+    Search Functionality
+
+[33mcommit f73515b9cda9c698018907748143892de65657fe[m
+Merge: c1a6697 0a9d46b
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 14:29:54 2023 +0200
+
+    Merge branch 'main' of github.com:Seif-Ibrahim1/HR_web
+
+[33mcommit c1a66971309c9a460e67b4fcff97eb2c35a99500[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 14:29:44 2023 +0200
+
+    Finshed search
+
+[33mcommit 0a9d46b517b89cee53bc4948ff2bfcf60c150017[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 14:24:56 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit a43d661d628352b7620807eeadb75f022a88e128[m
+Merge: 254008a 2a5a537
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 14:13:05 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit 254008a3ccdefbd8b509d41e7b7bb2f22fd9b665[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 14:12:40 2023 +0200
+
+    search table
+
+[33mcommit 1460f1321370126cb1d8f2563a8e09bde6ef1218[m
+Merge: bc681f6 2a5a537
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 14:07:04 2023 +0200
+
+    Solving merge conflicts
+
+[33mcommit bc681f610d3c79f6a8189955ba29a7bfbc858dec[m
+Author: Seif <SE.SeifIbrahim@gmail.com>
+Date:   Mon Apr 17 14:04:48 2023 +0200
+
+    Search functionality
+
+[33mcommit 2a5a537581927f57d5a35c228c58134bfa5228ce[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 14:03:28 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit 34401e64629f85538d3612c704bc625badfc8120[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 14:01:14 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit a0ea28f9c9abf11779de4da1d50a0f0657560f79[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 13:59:55 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit c8ba35728dd09aaa3344151c608d3ae99a499c06[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 13:58:57 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit a358dff14662417a1167da68827f2a66b665c092[m
+Merge: aad0e92 a3d6a33
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 13:54:09 2023 +0200
+
+    Merge branch 'ahmed'
+
+[33mcommit aad0e922bd996282e46c88362df2fe921540ade5[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Mon Apr 17 13:54:00 2023 +0200
+
+    Update searchStyle.css
+
+[33mcommit a321b48f97b9373e6e19a332d3089a3b8cedae0d[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 02:22:31 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit 770034321200bbdad9b5f67781ba5206721d1fba[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Mon Apr 17 00:33:55 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit bc4ec28639b517789cba1ea241c19b4ba258a284[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sun Apr 16 23:27:45 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit 3f011285c5a438c2a09c2c9a16035526452954cd[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sun Apr 16 23:26:04 2023 +0200
+
+    Update vac_form.js
+
+[33mcommit aea3fabcec8d90d37cfc31f7ee7426f77c24430c[m
+Author: Salmaabdelaziz271 <93342442+Salmaabdelaziz271@users.noreply.github.com>
+Date:   Sun Apr 16 05:49:21 2023 +0200
+
+    Update vacation_requsets.html
+
+[33mcommit 1413937040e620bb828703410f012b0b05e447bc[m
+Author: Salmaabdelaziz271 <93342442+Salmaabdelaziz271@users.noreply.github.com>
+Date:   Sun Apr 16 05:37:32 2023 +0200
+
+    Update vac_form.js
+
+[33mcommit fc1a108a12dc937b3b5ae945683329449c1ffc4f[m
+Author: Salmaabdelaziz271 <93342442+Salmaabdelaziz271@users.noreply.github.com>
+Date:   Sun Apr 16 05:14:36 2023 +0200
+
+    update vacation_requests after add js
+
+[33mcommit adeffa5f2528c2d9dc4345fa9ea505caa36474ef[m
+Author: Salmaabdelaziz271 <93342442+Salmaabdelaziz271@users.noreply.github.com>
+Date:   Sun Apr 16 05:12:37 2023 +0200
+
+    add vacation_requests js
+
+[33mcommit b44606f125cdac67a894336e201630de8ae4db8c[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sun Apr 16 01:46:42 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit 5672ce9a037adf58aa08a1bc6144f69c7043ced8[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sun Apr 16 01:45:55 2023 +0200
+
+    Update vacation_form.css
+
+[33mcommit 17852695a49f960152dc808e4ac63a4fe385ef82[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sun Apr 16 01:44:54 2023 +0200
+
+    Add files via upload
+    
+    fill the submit form
+
+[33mcommit 75f068465b278d4244cc524fd68f8ee1c06b7f97[m
+Merge: 83af76d 10a30c5
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 14:26:52 2023 +0200
+
+    Merge branch 'main' of https://github.com/3bde1r7man/HR_web
+
+[33mcommit 83af76db9973e01baf1e674773ef765950e2c48f[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 14:26:27 2023 +0200
+
+    remove redirection statment
+
+[33mcommit a3d6a3301fe2bc9c212d4930e00cc7dfb6fb7ad0[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 14:24:49 2023 +0200
+
+    fix edit errors
+
+[33mcommit 10a30c5432b9ee2defdd024b16f9abed391af82f[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat Apr 15 12:55:34 2023 +0200
+
+    added projects page
+
+[33mcommit 3aead146dacb34367192062ea1b5168d97844f14[m
+Author: Abdelrhman Mostafa <abdelrhman.m.hessain@gmail.com>
+Date:   Sat Apr 15 12:16:02 2023 +0200
+
+    deleted old navStyle
+
+[33mcommit e1f003a7fb4900b765073f2cc1ce0ed85d124e12[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 03:19:13 2023 +0200
+
+    add search function with local storage search
+
+[33mcommit 9238cdc87a6f661fe6fd970bf4fd10c78ea09d88[m
+Merge: 57fd63d 05943b6
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 02:12:43 2023 +0200
+
+    Merge branch 'main' into ahmed
+
+[33mcommit 57fd63d480b12b0c502d141b6b7b41e884ab7ef0[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 02:12:30 2023 +0200
+
+    reset
+
+[33mcommit 05943b6d90ec1f578fcf645a9ae147a2e00c8a40[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 02:11:25 2023 +0200
+
+    add edit js file
+
+[33mcommit 4ce39c6b56fcc61fb4e83c8fdf9a7320595879a8[m
+Author: Ahmed Hanfy <ahanfybekheet@gmail.com>
+Date:   Sat Apr 15 02:04:15 2023 +0200
+
+    fix nav style issue
+
+[33mcommit 4293e0dc03c90c4aa636edf2c08f29153a255b66[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sat Apr 15 01:25:19 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit 32580fa32b73d692e56a001da8696ef0a4678c6a[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sat Apr 15 00:13:53 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit a1a963c21cc3e931dd69214df351c28c1aa94c95[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sat Apr 15 00:02:44 2023 +0200
+
+    Add files via upload
+
+[33mcommit a50707d8eabe8ab147790c371774633f94c66659[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sat Apr 15 00:01:38 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit 0bf0a8455ea6e46a7fb1ae0bd4340bb656b9ba3b[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Sat Apr 15 00:00:34 2023 +0200
+
+    Update vacation_form.html
+
+[33mcommit acb8dd30eaee1ba9b1f2fc86aeadc430f33f3a58[m
+Author: shahd osama <102310738+shahdosama10@users.noreply.github.com>
+Date:   Fri Apr 14 23:25:38 2023 +0200
+
+    Add files via upload
