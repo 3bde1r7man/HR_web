@@ -35,6 +35,7 @@ function del(delete_url) {
     fetch(delete_url, {
       method: "DELETE",
       headers: {
+        "X-CSRFToken": csrf_token,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({})
