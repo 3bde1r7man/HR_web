@@ -12,8 +12,6 @@
 <body>
     {% include 'partials/_header.html' %}
     <h1>Submitted Vacation</h1>
-    <form method="post">
-        {% csrf_token %}
         <table>
             <thead>
                 <tr>
@@ -28,7 +26,9 @@
             </thead>
             <tbody id="vacations-table"></tbody>
         </table>
-    </form>
+        <script>
+            var csrf_token = "{{csrf_token}}";
+        </script>
     <img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape">
 </body>
 </html>

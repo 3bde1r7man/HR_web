@@ -19,7 +19,7 @@ function SubmittedVacationsTable() {
         toDate.innerHTML = vacation.toDate;
         reason.innerHTML = vacation.reason;
         status.innerHTML = vacation.status;
-        action.innerHTML = `<button class="button1" onclick="approveVacation('${vacation.emp_id}')">Approve</button><button class="button2" onclick="rejectVacation('${vacation.emp_id}')">Reject</button>`;
+        action.innerHTML = `<button type="button" class="button1" onclick="approveVacation('${vacation.emp_id}')">Approve</button><button type="button" class="button2" onclick="rejectVacation('${vacation.emp_id}')">Reject</button>`;
       });
     })
     .catch(error => {
@@ -28,7 +28,7 @@ function SubmittedVacationsTable() {
 }
 
 function approveVacation(id) {
-  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  const csrfToken = csrf_token
 
   fetch(`/approve_vacation/${id}/`, {
     method: 'POST',
@@ -36,22 +36,25 @@ function approveVacation(id) {
       'Content-Type': 'application/json',
       'X-CSRFToken': csrfToken,
     },
+    body: JSON.stringify({}), 
   })
     .then(response => response.json())
     .then(data => {
-      if(data.message === 'Vacation approved successfully.')
-          alert(data.message)
-      else if(data.message === 'Invalid number of vacation days.')  
-          alert(data.message)  
+      if (data.message === 'Vacation approved successfully.') {
+        alert(data.message);
+        window.location.href = '/search/';
+      } else if (data.message === 'Invalid number of vacation days.') {
+        alert(data.message);
+        window.location.href = '/search/'
+      }
     })
     .catch(error => {
       console.error('Error:', error);
     });
 }
 
-
 function rejectVacation(id) {
-  const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  const csrfToken = csrf_token
   
     fetch(`/reject_vacation/${id}/`, {
       method: 'POST',
@@ -59,11 +62,13 @@ function rejectVacation(id) {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken,
       },
+      body: JSON.stringify({}), 
     })
       .then(response => response.json())
       .then(data => {
        if(data.message === 'Vacation rejected successfully.')
           alert(data.message)
+          window.location.href = '/search/'
       })
       .catch(error => {
         console.error('Error:', error);

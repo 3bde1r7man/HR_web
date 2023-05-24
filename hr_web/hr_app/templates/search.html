@@ -1,36 +1,55 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Search</title>
-        <script src="{% static 'js/search.js' %}" defer> </script>
-        <link rel="stylesheet" href="{% static 'style/navStyle.css' %}">
-        <link rel="stylesheet" href="{% static 'style/searchStyle.css' %}">
-    </head>
-    <body>
-        {% include 'partials/_header.html' %}
-        <div class="search-bar">
-			<input type= "text" class="place" placeholder="Employee Name" searchInput>
-        </div>
-        <table style="border: 1px;" table>
+<head>
+    <title>Search</title>
+    <link rel="stylesheet" href="{% static 'style/navStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'style/searchStyle.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    {% include 'partials/_header.html' %}
+    <div class="search-bar">
+        <input type="text" class="place" placeholder="Employee Name" id="search-input">
+    </div>
+    <table class="employee-table">
+        <thead>
             <tr>
-                <th> Name </th>
-                <th> Submit Vacation </th>
-                <th> Edit Data </th>
+                <th>Name</th>
+                <th>Submit Vacation</th>
+                <th>Edit Data</th>
             </tr>
+        </thead>
+        <tbody id="employee-table-body">
+        {% if employees %}
             {% for employee in employees %}
-                <tr>
-                    <td>{{ employee.firstname }} {{employee.lastname}}</td>
-                    <td> 
-                        <button class="button1" ><a href="{% url 'form' pk=employee.userid %}"> Submit Vacation </a></button>
-                    </td>
-                    <td>
-                        <button class="button2" ><a href="{% url 'edit' pk=employee.userid %}"> Edit data </a></button> 
-                    </td>
-                </tr>
+            <tr>
+                <td>{{ employee.firstname }} {{ employee.lastname }}</td>
+                <td>
+                    <button class="button1">
+                        <a href="{% url 'form' pk=employee.userid %}">Submit Vacation</a>
+                    </button>
+                </td>
+                <td>
+                    <button class="button2">
+                        <a href="{% url 'edit' pk=employee.userid %}">Edit Data</a>
+                    </button>
+                </td>
+            </tr>
             {% endfor %}
-        </table>
-        
-    </body>
-    <img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape" >
+        {% else %}
+        <tr>
+            <td colspan="3">No employees found.</td>
+        </tr>
+        {% endif %}
+        </tbody>
+        <script>
+            var searchUrl = "{% url 'search' %}";
+        </script>
+        <script src="{% static 'js/search.js' %}"></script>
+    </table>
+    
+    
+</body>
+<img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape">
 </html>

@@ -8,6 +8,7 @@ from .forms import EditEmployee
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect, JsonResponse
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -75,9 +76,21 @@ class DeleteEmployeeView(DeleteView):
 
 
 def search(request):
-    employees = Employee.objects.all()
+    query = request.GET.get('query', '').strip()
+
+    query_parts = query.split()
+    if len(query_parts) == 2:
+        first_name = query_parts[0]
+        last_name = query_parts[1]
+        employees = Employee.objects.filter(
+            Q(firstname__icontains=query) | Q(lastname__icontains=query) | Q(firstname__icontains=first_name, lastname__icontains=last_name)
+        )
+    else:
+        employees = Employee.objects.filter(
+            Q(firstname__icontains=query) | Q(lastname__icontains=query)
+        )
     context = {'employees': employees}
-    return render(request,'search.html', context=context)
+    return render(request, 'search.html', context=context)
 
 def edit(request):
     return render(request, 'edit.html')

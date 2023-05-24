@@ -1,47 +1,30 @@
-const usersTmp = document.querySelector("[users-template]");
-const table = document.querySelector("[table]");
-const searchInput = document.querySelector("[searchInput]");
-const employees = JSON.parse(localStorage.getItem("employees"));
-let employeesRows = [];
+$(document).ready(function() {
+    // Get the search input element
+    var searchInput = document.getElementById('search-input');
+    var delayTimer; // Variable to hold the timer
 
-searchInput.addEventListener("input", e => {
-    const value = e.target.value;
-    employeesRows.forEach(employee => {
-        if(employee.name.toUpperCase().includes(value.toUpperCase())) {
-            employee.element.style.display = "";
-        } else {
-            employee.element.style.display = "none";
-        }
-        
+    // Add event listener for input changes
+    searchInput.addEventListener('input', function() {
+        clearTimeout(delayTimer); // Clear the previous timer
+
+        // Set a new timer to delay the search
+        delayTimer = setTimeout(function() {
+            // Get the search query from the input field
+            var query = searchInput.value.trim();
+
+            // Perform AJAX request to the server
+            $.ajax({
+                url: searchUrl, // Use the searchUrl variable here
+                method: 'GET',
+                data: { query: query },
+                success: function(response) {
+                    // Update the table body with the retrieved data
+                    $('#employee-table-body').html($(response).find('#employee-table-body').html());
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        }, 500); // Delay for 500 milliseconds (adjust as needed)
     });
-})
-
-
-for(let empId in employees) {
-    let emp = employees[empId];
-    const userRow = usersTmp.content.cloneNode(true).children[0]
-    const name = userRow.querySelector("[user-name]")
-    const submit = userRow.querySelector("[submit-vac]")
-    const edit = userRow.querySelector("[edit-user]")
-    const submitCheck = userRow.querySelector("[submitCheck]")
-    if(emp != null) {
-        var firstName = emp.firstName;
-        var lastName = emp.lastName;
-        name.textContent = firstName + " " + lastName;
-        submit.empID = empId;
-        edit.empID = empId;
-        submit.onclick = function() {
-            if(emp.vacationNum > 0) {
-                submitCheck.href = "../html/vacation_form.html"
-                localStorage.setItem("currentEmp", this.empID);
-            } else {
-                alert("You can't Submit a vacation");
-            }
-        }
-        edit.onclick = function() {
-            localStorage.setItem("currentEmp", this.empID);
-        }
-        table.appendChild(userRow)
-        employeesRows.push({name: name.textContent, element: userRow});
-    }
-}
+});
