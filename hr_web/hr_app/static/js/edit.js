@@ -32,20 +32,26 @@ function del() {
 // end of delete data
 
 function del(delete_url) {
-  fetch(delete_url, {
-    method: "DELETE",
-    headers: {
-      "X-CSRFToken": csrf_token,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({})
-  })
-    .then(function (response) {
-      if (response.ok) {
-        console.log("Success");
-      } else {
-        console.log("Error");
-        throw new Error("Error: " + response.status);
-      }
-    });
+  var confirmed = confirm("Are you sure you want to delete the employee?");
+
+  if (confirmed) {
+    fetch(delete_url, {
+      method: "DELETE",
+      headers: {
+        "X-CSRFToken": csrf_token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({})
+    })
+      .then(function (response) {
+        if (response.ok) {
+          console.log("Success");
+        } else {
+          console.log("Error");
+          throw new Error("Error: " + response.status);
+        }
+      });
+  } else {
+    console.log("Deletion canceled by user.");
+  }
 }
