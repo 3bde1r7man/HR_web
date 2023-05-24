@@ -21,7 +21,7 @@ class Employee(models.Model):
     address = models.CharField(max_length=50)
     material_status = models.CharField(max_length=50,choices=material)
     gender = models.CharField(max_length=50,choices=gen)
-    phone = models.IntegerField()
+    phone = models.CharField(max_length= 100)
     vcation_days = models.IntegerField()
     approved_vacation = models.IntegerField()
     salary = models.IntegerField()
