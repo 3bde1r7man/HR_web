@@ -52,7 +52,7 @@
         </div>
         <div class="form-group">
           <i class="fa fa-calendar" style="font-size: 1.5em"></i>
-          {{form.vacation_days}}
+          {{form.vcation_days}}
         </div>
         <div class="form-group">
           <i class="fa fa-calendar" style="font-size: 1.5em"></i>
@@ -73,9 +73,12 @@
         </div>
         <div class="form-group">
           <i class="fa fa-user icon" style="font-size: 1.5em"></i>
-          {{form.matrial_status}}
+          {{form.material_status}}
         </div>
         <div class="form-group button-container">
+          <script>
+            var csrf_token = "{{csrf_token}}";
+          </script>
           <button type="submit" class="button">Save</button>
           <a onclick="del('{% url 'delete' pk=pk %}')" style="text-align: center;" class="button" href="{%url 'search' %}">Delete</a>
         </div>

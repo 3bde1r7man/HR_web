@@ -90,20 +90,15 @@ def vacation_form(request, pk):
     
     if request.method == 'POST':
         form = VacationForm(request.POST)
-        print('befor valid')
-        print(str(form.instance.from_date) + ' ' + str(form.instance.to_date) + ' ' + str(form.instance.Reason) + '\n')
-        print(form.is_valid())
-
         if form.is_valid():
             vacation = form.save(commit=False)
             vacation.employee = employee
             vacation.status = "Submitted"
             vacation.save()
+            messages.success(request, 'Your request has been submitted successfully!')
+            print(messages)
             return redirect('search')
     else:
-        initial_data = {
-            
-        }
         form = VacationForm()
     
     context = {'form': form , 'emp_Name': f'{employee.firstname} {employee.lastname}','emp_id': employee.userid}
@@ -111,7 +106,7 @@ def vacation_form(request, pk):
 
 
 def vacation_request(request):
-    vacations = Vacation.objects.all()
+    vacations = Vacation.objects.filter(status='Submitted')
     context = {'vacations': vacations}
     return render(request, 'vacation_requests.html', context=context)
 
@@ -122,11 +117,11 @@ def approve_vacation(request, pk):
         employee.vcation_days -= (vacation.to_date - vacation.from_date).days
         employee.approved_vacation += (vacation.to_date - vacation.from_date).days
         employee.save()
+        vacation.status = "Approved"
         vacations = Vacation.objects.all()
-        vacation.delete()
+        vacation.save()
         context = {"message": "Vacation approved", "vacation" : vacations}
     else:
-        vacation.delete()
         vacations = Vacation.objects.all()
         context = {"message": "there is no days for this employee", "vacation" : vacations}
     
@@ -134,9 +129,9 @@ def approve_vacation(request, pk):
 
 
 def reject_vacation(request, pk):
-    employee = Employee.objects.get(pk=pk)
-    vacation = Vacation.objects.get(employee = pk)
+    vacation = Vacation.objects.filter(employee = pk, status = "Submitted")
     vacations = Vacation.objects.all()
-    vacation.delete()
+    vacation.satus = "Rejected"
+    vacation.save()
     context = {"message": "Vacation rejected", "vacation" : vacations}
     return render(request, 'vacation_requests.html', context = context)

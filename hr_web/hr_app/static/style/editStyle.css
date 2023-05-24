@@ -29,7 +29,11 @@ div.office-img img{
     width: 100%;
     height: auto;
 }
-A
+
+a {
+    text-decoration: none;
+}
+
 h1{
     font-family: cursive;
     font-weight: bold;
