@@ -1,7 +1,8 @@
 from typing import Any, Dict
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 from django.views.generic import UpdateView,DeleteView
 from .forms import VacationForm, EditEmployee, AddEmployee1, AddEmployee2
 from .models import Employee, Vacation
@@ -109,14 +110,33 @@ def vacation_form(request, pk):
     return render(request, 'vacation_form.html', context=context)
 
 
-
-
 def vacation_request(request):
     vacations = Vacation.objects.all()
     context = {'vacations': vacations}
     return render(request, 'vacation_requests.html', context=context)
 
+def approve_vacation(request, pk):
+    employee = Employee.objects.get(pk=pk)
+    vacation = Vacation.objects.get(employee = pk)
+    if (vacation.to_date - vacation.from_date).days <= employee.vcation_days:
+        employee.vcation_days -= (vacation.to_date - vacation.from_date).days
+        employee.approved_vacation += (vacation.to_date - vacation.from_date).days
+        employee.save()
+        vacations = Vacation.objects.all()
+        vacation.delete()
+        context = {"message": "Vacation approved", "vacation" : vacations}
+    else:
+        vacation.delete()
+        vacations = Vacation.objects.all()
+        context = {"message": "there is no days for this employee", "vacation" : vacations}
+    
+    return render(request, 'vacation_requests.html', context = context)    
 
 
-def handler404(request, exception):
-    return HttpResponse("404: Page Not Found! ")
+def reject_vacation(request, pk):
+    employee = Employee.objects.get(pk=pk)
+    vacation = Vacation.objects.get(employee = pk)
+    vacations = Vacation.objects.all()
+    vacation.delete()
+    context = {"message": "Vacation rejected", "vacation" : vacations}
+    return render(request, 'vacation_requests.html', context = context)

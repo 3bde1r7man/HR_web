@@ -22,5 +22,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hr_app.urls')),
 ]
-
-handler404 = 'hr_app.views.handler404'
