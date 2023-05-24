@@ -1,13 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    {%if messages %}
-        {% for message in messages %}
-            <script>
-                alert('{{ message }}');
-            </script>
-        {% endfor %}
-    {% endif %}
     <head>
         <title>Search</title>
         <script src="{% static 'js/search.js' %}" defer> </script>

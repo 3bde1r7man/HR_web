@@ -95,8 +95,6 @@ def vacation_form(request, pk):
             vacation.employee = employee
             vacation.status = "Submitted"
             vacation.save()
-            messages.success(request, 'Your request has been submitted successfully!')
-            print(messages)
             return redirect('search')
     else:
         form = VacationForm()
