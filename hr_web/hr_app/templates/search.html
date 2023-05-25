@@ -26,8 +26,18 @@
             <tr>
                 <td>{{ employee.firstname }} {{ employee.lastname }}</td>
                 <td>
-                    <button class="button1">
-                        <a href="{% url 'form' pk=employee.userid %}">Submit Vacation</a>
+                    <button id="vac" class="button1">
+                        {% if employee.vcation_days != 0 %}
+                        <script>
+                            document.getElementById("vac").disabled = false
+                        </script>
+                        <a id="vacRef" href="{% url 'form' pk=employee.userid %}">Submit Vacation</a>
+                        {%else%}
+                        <script>
+                            document.getElementById("vac").disabled = true
+                        </script>
+                        Can't Submit Vacation
+                        {%endif%}
                     </button>
                 </td>
                 <td>
