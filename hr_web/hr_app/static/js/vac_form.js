@@ -7,7 +7,7 @@ function s(){
     alert("From date should be less than To date")
   } 
   else{
-    alert("Vacation request submitted successfully" + isValid)
+    alert("Vacation request submitted successfully")
   }
 };
 
