@@ -87,11 +87,12 @@ def search(request):
 
 def vacation_form(request, pk):
     employee = Employee.objects.get(pk=pk)
-    
     if request.method == 'POST':
         form = VacationForm(request.POST)
         if form.is_valid():
             vacation = form.save(commit=False)
+            if vacation.from_date >= vacation.to_date:
+                return redirect('search')
             vacation.employee = employee
             vacation.status = "Submitted"
             vacation.save()
@@ -109,27 +110,28 @@ def vacation_request(request):
     return render(request, 'vacation_requests.html', context=context)
 
 def approve_vacation(request, pk):
-    employee = Employee.objects.get(pk=pk)
-    vacation = Vacation.objects.get(employee = pk)
-    if (vacation.to_date - vacation.from_date).days <= employee.vcation_days:
-        employee.vcation_days -= (vacation.to_date - vacation.from_date).days
-        employee.approved_vacation += (vacation.to_date - vacation.from_date).days
-        employee.save()
+    vacation = Vacation.objects.get(id = pk)
+    if (vacation.employee.vcation_days) > (vacation.to_date - vacation.from_date).days:
+        vacation.employee.vcation_days -= (vacation.to_date - vacation.from_date).days
+        vacation.employee.approved_vacation += (vacation.to_date - vacation.from_date).days
+        vacation.employee.save()
         vacation.status = "Approved"
-        vacations = Vacation.objects.all()
         vacation.save()
-        context = {"message": "Vacation approved", "vacation" : vacations}
-    else:
         vacations = Vacation.objects.all()
-        context = {"message": "there is no days for this employee", "vacation" : vacations}
-    
-    return render(request, 'vacation_requests.html', context = context)    
+        vacations.filter(status = "Submitted")
+        messages.success(request, "Vacation approved")
+    else:
+        vacation.status = "Rejected"
+        vacation.save()
+        messages.success(request, "Vacation rejected, there is no Vacation days for this employee")
+    return redirect('request')   
 
 
 def reject_vacation(request, pk):
-    vacation = Vacation.objects.filter(employee = pk, status = "Submitted")
+    vacation = Vacation.objects.get(id = pk)
     vacations = Vacation.objects.all()
-    vacation.satus = "Rejected"
+    vacations.filter(status = "Submitted")
+    vacation.status = "Rejected"
     vacation.save()
-    context = {"message": "Vacation rejected", "vacation" : vacations}
-    return render(request, 'vacation_requests.html', context = context)
+    messages.success(request, "Vacation rejected")
+    return redirect('request')

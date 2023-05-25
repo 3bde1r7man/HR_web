@@ -1,11 +1,17 @@
 {% load static %}
+{% if messages %}
+    {% for message in messages %}
+        <script>
+            alert('{{ message }}');
+        </script>
+    {% endfor %}
+{% endif %}
 <!DOCTYPE html>
 <html>
     <head>
         <title> Submitted Vacation </title>
         <link rel = "stylesheet" href="{% static 'style/vacation_requestsStyle.css' %}">
         <link rel="stylesheet" href="{% static 'style/navStyle.css' %}">
-        <!-- <script src="{% static 'js/requests.js' %}" ></script> -->
         
     </head>
     
@@ -34,17 +40,11 @@
                         <td>{{ vacation.Reason }}</td>
                         <td>{{ vacation.status }}</td>
                         <td> 
-                            <button class="button1"><a href="{% url 'approve_vacation' pk=vacation.employee.userid %}" style="text-decoration: none ;">Approve</a></button>
-                            <button class="button2"> <a href= "{% url 'reject_vacation' pk=vacation.employee.userid %}" style="text-decoration: none ;"> Reject</a></button> 
+                            <button class="button1"><a href="{% url 'approve_vacation' pk=vacation.id %}" style="text-decoration: none ;">Approve</a></button>
+                            <button class="button2"> <a href= "{% url 'reject_vacation' pk=vacation.id %}" style="text-decoration: none ;"> Reject</a></button> 
                         </td>
                     </tr>
                 {% endfor %}
-
-                {% if message %}
-                    <script>
-                        alert('{{ message }}');
-                    </script>
-                {% endif %}
             </tbody>
         </table>
         <img src="{% static 'shapes/shape wave.png' %}" class="i" alt="shape" >
