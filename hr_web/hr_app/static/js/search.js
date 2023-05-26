@@ -21,3 +21,12 @@ $(document).ready(function() {
         }, 500); 
     });
 });
+
+window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = urlParams.get('error_message');
+    if (errorMessage) {
+        alert(errorMessage);
+        window.location.href = searchUrl;
+    }
+}

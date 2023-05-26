@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.views import View 
 from django.views.generic import UpdateView,DeleteView
 from django.shortcuts import render, redirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from .models import Employee, Vacation
 from .forms import EditEmployee
 from django.template import RequestContext
@@ -101,8 +101,8 @@ class VacationView:
         current_user = Employee.objects.get(pk=pk)
         existed_request = Vacation.objects.filter(emp_id=current_user.userid).exists()
         if existed_request:
-            messages.error(request, 'You have already submitted a request!')
-            return redirect('search')
+            error_message = 'You have already submitted a request!'
+            return HttpResponseRedirect(reverse('search') + f'?error_message={error_message}')
         
         context={'current_user':current_user,'fullname':current_user.firstname + ' ' + current_user.lastname}
         
