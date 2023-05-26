@@ -24,9 +24,9 @@ $(document).ready(function() {
 
 window.onload = function() {
     const urlParams = new URLSearchParams(window.location.search);
-        const hasInvalidParam = urlParams.has('invalid');
-        if (hasInvalidParam) {
-            alert('You have already submitted a request!');
-            window.location.href = searchUrl;
-        }
+    const alreadySubmitted = urlParams.has('already-submitted');
+    if (alreadySubmitted) {
+        alert('You have already submitted a request!');
+        window.location.href = searchUrl;
+    }
 }

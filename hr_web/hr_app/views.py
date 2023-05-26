@@ -102,7 +102,7 @@ class VacationView:
         existed_request = Vacation.objects.filter(emp_id=current_user.userid).exists()
         if existed_request:
             error_message = 'You have already submitted a request!'
-            return HttpResponseRedirect(reverse('search') + '?' + 'invalid')
+            return HttpResponseRedirect(reverse('search') + '?' + 'already-submitted')
         
         context={'current_user':current_user,'fullname':current_user.firstname + ' ' + current_user.lastname}
         
